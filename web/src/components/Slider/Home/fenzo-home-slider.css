@@ -1,0 +1,152 @@
+.fenzo-slider__wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
+  background: transparent;
+  width: 100%;
+  max-width: 1366px;
+  height: 448px;
+  margin: auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.slider-item .fenzo-slider__wrapper {
+  padding: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.fenzo-slider {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+}
+
+.fenzo-slider__arrow-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  color: #1652F0;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid rgba(72,75,119,0.17);
+  outline: none;
+  transition: all .2s ease-in-out;
+  transform: scale(1);
+}
+
+.fenzo-slider__arrow-button:hover {
+  color: #3340FF;
+  transform: scale(1.1);
+}
+
+.fenzo-slider__content {
+  text-align: left;
+  justify-self: flex-start;
+  padding: 20px 0 20px 80px;
+  z-index: 100;
+}
+
+.fenzo-slider__content .info-heading, .fenzo-slider__content .btn {
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.fenzo-slider__title_upper {
+  text-transform: uppercase;
+  font-weight: 300 !important;
+  letter-spacing: .035rem;
+}
+
+.fenzo-slider__title {
+  max-width: 70%;
+}
+
+.fenzo-slider.bg-cover {
+  background-image: url("http://localhost:3000/portoes-aluminio-hero-default.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 50%;
+}
+
+.fenzo-slider.bg-cover .fenzo-slider__content .info-heading {
+  color: #fff !important;
+}
+
+.fadeInSlideUp {
+  animation-name: fadeInUpSD;
+  animation-duration: 1s;
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .fenzo-slider__wrapper {
+      max-height: 180px;
+  }
+
+  .fenzo-slider__content {
+      padding: 20px 0 20px 40px;
+      max-height: 180px;
+  }
+
+  .fenzo-slider.bg-cover {
+      background-position: 0 50%;
+  }
+
+  .fenzo-slider__title_upper {
+      font-size: 85% !important;
+      margin-bottom: 0.35rem !important;
+  }
+
+  .fenzo-slider__title {
+      max-width: 72%;
+      font-size: 1.5rem !important;
+      line-height: 1.2;
+      margin-top: 0.35rem !important;
+      margin-bottom: 0.35rem !important;
+  }
+
+  .fenzo-slider__subtitle {
+      font-size: 1rem !important;
+      margin-bottom: 0 !important;
+  }
+
+  .fenzo-slider__content button {
+    display: flex;
+    justify-self: flex-end;
+    align-self: flex-end;
+    margin-left: auto;
+    bottom: 35px;
+    right: 25px;
+  }
+
+}
+
+.slick-slider.slider-dark .slick-dots {
+  bottom: 1.8rem;
+}
+
+.slick-slider.slider-dark .slick-dots li button:before
+{
+    background:#ffffff;
+}
+.slick-slider.slider-dark .slick-dots li.slick-active button:before
+{
+    color: #ffffff;
+}

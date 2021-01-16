@@ -1,0 +1,121 @@
+/* Services Page */
+
+@media only screen and (min-width: 960px) {
+  .home-page .fenzo-services__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1366px !important;
+    margin: auto;
+    padding: 0px 30px;
+  }
+}
+
+.home-page .fenzo-services__container {
+    padding: 0px 20px;
+}
+
+.fenzo-service-wrapper {
+  position: relative;
+  display: flex;
+  flex: 0 1 calc(25% - 1em);
+  margin: 15px;
+  width: 100%;
+  height: min-content;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(242, 242, 242);
+  border-image: initial;
+  transition: all 200ms ease 0s;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 0 0.75rem 0 0.75rem;
+}
+
+.fenzo-service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+  max-height: 150px;
+  height: 149px;
+  max-width: 360px;
+}
+
+@media screen and (min-width: 60em) {
+  .fenzo-service-wrapper {
+      flex: 0 1 calc(30% - 1em);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .fenzo-service-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
+
+  .fenzo-service-wrapper {
+      flex: 0 1 calc(50% - 1em);
+  }
+}
+
+.fenzo-services {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.service-card {
+    display: grid;
+    height: 90px;
+    width: 100%;
+    grid-template-columns: 60px 1px 1fr;
+    grid-template-rows: 1fr 20px;
+    grid-template-areas:
+        "figure divider title"
+        "figure divider content";
+    padding: 12px;
+    border-radius: 4px;
+    grid-column-gap: 12px;
+}
+
+@media only screen and (min-width: 960px) {
+  .service-card {
+    height: 130px;
+    grid-template-columns: 85px 1px 1fr;
+    cursor: pointer;
+    grid-column-gap: 20px;
+    padding: 20px;
+  }
+}
+
+.service-card__figure {
+  position: relative;
+  height: 4rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: rgb(255, 255, 255);
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 960px) {
+  .service-card__header {
+    padding: 0px 0px 10px;
+  }
+}
+.service-card__header {
+    width: 100%;
+    display: flex;
+    position: relative;
+    padding: 0px 0px 2px;
+}
+
+.service-name {
+  line-height: 1.22;
+  font-weight: 600;
+}
