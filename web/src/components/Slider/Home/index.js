@@ -43,34 +43,64 @@ const settings = {
 const HomeSlider = () => {
   return (
     <>
-    <div className="home_slider flex-container">
-      <Slider {...settings} className="fenzo_home_slider slider-dark">
-        <div className="slider-item">
-          <SliderHomeContent />
-        </div>
+      <div className="home_slider flex-container">
+        <Slider {...settings} className="fenzo_home_slider slider-dark">
+          <div className="slider-item">
+            <SliderHomeContent
+              id="portao-aluminio-slide"
+              title="Seu portão elegante e durável"
+              upperTitle="Portões de alumínio"
+              subtitle="A Fenzo faz ®"
+              image="http://localhost:3000/portoes-aluminio-hero-default.png"
+              url="/servico/portoes-de-aluminio/"
+              hasButton={true}
+              hasImage={true}
+              cssClass=""
+            />
+          </div>
 
-        <div className="slider-item">
-          <img alt="Mars Image" className="img-responsive cover" src="https://raw.githubusercontent.com/solodev/text-animations-slick-slider/master/images/mars-mission.jpg" />
-        </div>
+          <div className="slider-item">
+            <SliderHomeContent
+              id="guarda-corpo-slide"
+              title="Guarda corpo em alumínio e vidro temperado"
+              upperTitle="Guarda Corpo"
+              subtitle="Modernidade e requinte"
+              image="http://localhost:3000/guarda-corpo-vidro-by-fenzo.png"
+              url="/servico/portoes-de-aluminio/"
+              hasButton={true}
+              hasImage={true}
+              cssClass=""
+            />
+          </div>
 
-        <div className="slider-item">
-          <div className="slider-content">
-            <h3>2</h3>
+          <div className="slider-item">
+            <SliderHomeContent
+              id="chamada-slide"
+              title="Guarda corpo em alumínio e vidro temperado"
+              upperTitle="Guarda Corpo"
+              subtitle="Modernidade e requinte"
+              image=""
+              url="/servicos"
+              hasButton={false}
+              hasImage={false}
+              cssClass=""
+            />
           </div>
-        </div>
-        <div className="slider-item">
-          <div className="slider-content">
-            <h3>3</h3>
+
+          <div className="slider-item">
+            <div className="slider-content">
+              <h3>3</h3>
+            </div>
           </div>
-        </div>
-        <div className="slider-item">
-          <div className="slider-content">
-            <h3>4</h3>
+
+          <div className="slider-item">
+            <div className="slider-content">
+              <h3>4</h3>
+            </div>
           </div>
-        </div>
-      </Slider>
-    </div>
-    <style jsx>{`
+        </Slider>
+      </div>
+      <style jsx>{`
 
     `}</style>
     </>

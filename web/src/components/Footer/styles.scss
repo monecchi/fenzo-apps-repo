@@ -1,0 +1,38 @@
+//
+// Footer Default
+//
+
+.footer {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin: 3rem auto;
+  background: rgba(250,250,250,1.0);
+}
+
+.telefone-footer {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  h5 {
+    color: #201e78;
+    font-family: 'Soleil-Bold', Helvetica, Arial, serif;
+    font-size: 2.3rem;
+    font-style: normal;
+    font-weight: 700;
+    height: calc(100.00% + 2px);
+    left: 34px;
+    letter-spacing: 0.00px;
+    line-height: 33px;
+    position: absolute;
+    text-align: left;
+    top: 4px;
+    white-space: nowrap;
+    width: calc(100.00% - 32px);
+  }
+
+  .call-icon {
+    display: inline-flex !important;
+  }
+}

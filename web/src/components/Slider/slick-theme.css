@@ -2,7 +2,7 @@
 /* Slider */
 .slick-loading .slick-list
 {
-    background: #fff url('./ajax-loader.gif') center center no-repeat;
+    background: #fff url('../../assets/icons/fenzo-loading.gif') center center no-repeat;
 }
 
 .slick-initialized .slick-slide {
@@ -177,7 +177,7 @@
   max-width: 1366px;
   height: 172px;
   text-align: center;
-  background: #fafafa;
+  background: #F8F8FB;
   box-shadow: 0 .125rem .25rem rgba(31,45,61,.08) !important;
 }
 

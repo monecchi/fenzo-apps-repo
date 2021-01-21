@@ -3,6 +3,9 @@ import styled from 'styled-components';
 //
 // Telefone Component Styles, override global.css
 //
+
+// ${props => props.theme.colors.brand};
+
 export const TelephoneComponent = styled.div.attrs(props => ({
   className: 'responsive-header__telephone',
 }))`
@@ -13,7 +16,7 @@ export const TelephoneComponent = styled.div.attrs(props => ({
 
   .responsive-header__button {
     .btn__label {
-      color: ${props => props.theme.colors.brand_alt} !important;
+      color: #1652F0 !important;
       font-weight: 600;
     }
 
@@ -43,8 +46,8 @@ export const TelephoneComponent = styled.div.attrs(props => ({
   .btn {
     &.btn--link {
       svg {
-        color: ${props => props.theme.colors.brand};
-        fill: ${props => props.theme.colors.brand};
+        color: #0033FF;
+        fill: #0033FF;
       }
     }
   }

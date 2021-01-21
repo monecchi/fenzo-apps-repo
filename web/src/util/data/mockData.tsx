@@ -12,11 +12,13 @@ export const projects = [
     slider_title: 'Seu portão elegante e durável',
     slider_subtile: 'A Fenzo faz ®',
     icon_name: 'portao-aluminio',
+    icon_color: '#0033FF',
     hasImage: true,
-    img_url: 'http://192.168.0.7:3000/portoes-aluminio-hero.png',
+    img_url: '/portoes-aluminio-hero.png',
     hasButton: true,
     url: '',
     cssClass: '',
+    color: '#E3EDFF'
   },
   {
     id: 2,
@@ -27,11 +29,13 @@ export const projects = [
     slider_title: 'Um toque diferenciado para sua decoração',
     slider_subtile: 'Durabilidade, clareza e requinte',
     icon_name: 'vidro-temperado',
+    icon_color: '#0033FF',
     hasImage: true,
-    img_url: 'http://192.168.0.7:3000/portoes-aluminio-hero.png',
+    img_url: '/portoes-aluminio-hero.png',
     hasButton: true,
     url: '',
     cssClass: '',
+    color: '#F3EEFF'
   },
   {
     id: 3,
@@ -42,11 +46,13 @@ export const projects = [
     slider_title: 'Segurança, leveza e elegância',
     slider_subtile: 'Guarda-corpo de vidro e alumínio',
     icon_name: 'escada-guarda-corpo',
+    icon_color: '#EC373C',
     hasImage: true,
-    img_url: 'http://192.168.0.7:3000/portoes-aluminio-hero.png',
+    img_url: '/portoes-aluminio-hero.png',
     hasButton: true,
     url: '',
     cssClass: '',
+    color: '#FFF1F0'
   },
   {
     id: 4,
@@ -57,11 +63,13 @@ export const projects = [
     slider_title: 'Funcionalidade e vista deslumbrante',
     slider_subtile: 'Teto de vidro com alumínio',
     icon_name: 'telhado-cobertura-pergolado',
+    icon_color: '#0033FF',
     hasImage: true,
-    img_url: 'http://192.168.0.7:3000/portoes-aluminio-hero.png',
+    img_url: '/aluminio-sanfonada-vidro.jpg',
     hasButton: true,
     url: '',
     cssClass: '',
+    color: '#F5F8FF'
   },
   {
     id: 5,
@@ -72,11 +80,13 @@ export const projects = [
     slider_title: 'Funcionalidade e vista deslumbrante',
     slider_subtile: 'Teto de vidro com alumínio',
     icon_name: 'serralheria-fenzo',
+    icon_color: '#0033FF',
     hasImage: true,
-    img_url: 'http://192.168.0.7:3000/portoes-aluminio-hero.png',
+    img_url: '/porta-pivotante-de-aluminio.jpg',
     hasButton: true,
     url: '',
     cssClass: '',
+    color: '#E3EDFF'
   },
   {
     id: 6,
@@ -87,11 +97,13 @@ export const projects = [
     slider_title: 'Funcionalidade e segurança',
     slider_subtile: 'Portões com acionamento automático',
     icon_name: 'wifi',
+    icon_color: '#0033FF',
     hasImage: true,
-    img_url: 'http://192.168.0.7:3000/portoes-aluminio-hero.png',
+    img_url: '/portoes-aluminio-hero.png',
     hasButton: true,
     url: '',
     cssClass: '',
+    color: '#E3EDFF'
   },
 ];
 
@@ -107,7 +119,7 @@ export const slides = [
     subtitle: 'A Fenzo faz ®',
     hasImage: true,
     hasButton: true,
-    image: 'http://192.168.0.7:3000/portoes-aluminio-hero.png',
+    image: '/portoes-aluminio-hero.png',
     url: '/portoes-de-aluminio',
     cssClass: ''
   },
@@ -118,7 +130,7 @@ export const slides = [
     subtitle: 'A Fenzo faz ®',
     hasImage: true,
     hasButton: true,
-    image: 'http://192.168.0.7:3000/portoes-aluminio-hero.png',
+    image: '/portoes-aluminio-hero.png',
     url: '',
     cssClass: ''
   },

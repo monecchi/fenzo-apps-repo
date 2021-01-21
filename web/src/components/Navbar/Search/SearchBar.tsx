@@ -19,7 +19,7 @@ class SearchBar extends Component<Props, State> {
 
   render () {
     return (
-      <div className="ui segment" >
+      <div className="ui segment">
         <form onSubmit={this.onFormSubmit} className="ui form" >
           <label>Image Search</label>
           <div className="field">

@@ -1,3 +1,3 @@
 # Fenzo
 
-Fenzo apps standalone repo. Powered by React / NextJS
+Fenzo frontend web. Powered by React / NextJS

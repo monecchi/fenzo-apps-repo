@@ -4,7 +4,7 @@ import Link from 'next/link'
 // RestoPizza Icons set
 import Icon from '../Icon';
 
-export default function Servico({ project }) {
+export default function Service({ project }) {
   return (
     <>
       <div className="fenzo-service-wrapper">

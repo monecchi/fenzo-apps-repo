@@ -1,72 +1,104 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
+import React, { Component } from "react"
+import Slider from "react-slick"
+import { useServices } from '../../../util/hooks/useServices'
 
-// Slick Carousel Default Styles
-import "slick-carousel/slick/slick.css";
+// Slick Carousel Default Styles (already imported on main slider)
+//import "slick-carousel/slick/slick.css";
 //import "slick-carousel/slick/slick-theme.css";
 
 // Custom slick-theme.css
-import '../slick-theme.css';
+//import '../slick-theme.css'
+import './service-slider.scss'
 
-// Slider Content Component
-import SliderHomeContent from '../SliderContent';
+import { Box, Image, Flex, Badge, Text, Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react';
+
+import Icon from '../../Icon'
+import Link from 'next/link'
+
 
 const settings = {
   dots: false,
   arrows: false,
   infinite: true,
   speed: 500,
-  slidesToShow: 5,
-  slidesToScroll: 1,
+  variableWidth: true,
+  slidesToShow: 5, // comment out if ininite is set to false
+  slidesToScroll: 4,
   draggable: true,
   centerMode: false,
   responsive: [
     {
       breakpoint: 768,
       settings: {
-        dots: false,
-        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1
       }
     },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
   ]
 };
 
 //
 // Home Slider
 // style={{backgroundImage: `url(${"https://falcon.technext.it/static/media/1-2.ee9d7fdf.jpg"})`}}  <h1 style={{color: "#fff"}}>Portões de Alumínio</h1>
+// {/*<Link href={`/servico/${service.slug}`}>ver mais</Link>*/}
 
 //
 const ServiceSlider = () => {
+
+  const { services, isLoading } = useServices()
+
+  const mockItems = Array(6)
+
+  const loading = true
+
+  if (loading) {
+    return (
+      <div className="service_slider flex-container">
+        <Slider {...settings} className="fenzo__service-slider">
+
+          {mockItems.fill(0).map((item, index) => (
+            <div className="slider-item" key={index}>
+              <div className="service__slide" style={{ backgroundColor: "#F8F8FB" }}>
+                <div className="slider-content" style={{ display: 'block'}} >
+                  <SkeletonCircle size="10" style={{ borderRadius: '0.25rem' }} />
+                  <SkeletonText mt="3" noOfLines={2} spacing="4" height="20px" />
+                </div>
+              </div>
+            </div>
+          ))}
+
+        </Slider>
+      </div>
+    )
+  }
+
   return (
     <>
-    <div className="service_slider flex-container">
-      <Slider {...settings} className="fenzo_home_slider slider-dark">
-        <div className="slider-item">
-          <SliderHomeContent />
-        </div>
+      <div className="service_slider flex-container">
+        <Slider {...settings} className="fenzo__service-slider">
 
-        <div className="slider-item">
-          <img alt="Mars Image" className="img-responsive cover" src="https://raw.githubusercontent.com/solodev/text-animations-slick-slider/master/images/mars-mission.jpg" />
-        </div>
+          {services.map((service) => (
+            <div className="slider-item" key={service.id}>
+              <div className="service__slide" style={{ backgroundColor: service.color }}>
+                <div className="slider-content">
+                  <Icon icon={service.icon_name} size={42} color={service.icon_color} className="service__slider-icon" />
+                  <h4 className="lh-0">{service.title}</h4>
+                  <Text fontSize="sm" color="gray.800">{service.subtitle}</Text><Link href={`/servico/${service.slug}`}>ver mais</Link>
+                </div>
+              </div>
+            </div>
+          ))}
 
-        <div className="slider-item">
-          <div className="slider-content">
-            <h3>2</h3>
-          </div>
-        </div>
-        <div className="slider-item">
-          <div className="slider-content">
-            <h3>3</h3>
-          </div>
-        </div>
-        <div className="slider-item">
-          <div className="slider-content">
-            <h3>4</h3>
-          </div>
-        </div>
-      </Slider>
-    </div>
-    <style jsx>{`
+        </Slider>
+      </div>
+      <style jsx>{`
 
     `}</style>
     </>

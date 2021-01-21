@@ -16,6 +16,10 @@
   overflow: hidden;
 }
 
+.fenzo-slider__wrapper.no-bg {
+  width: auto;
+}
+
 .slider-item .fenzo-slider__wrapper {
   padding: 0;
   margin-top: auto;
@@ -98,6 +102,10 @@
 @media screen and (max-width: 768px) {
   .fenzo-slider__wrapper {
       max-height: 180px;
+  }
+
+  .fenzo-slider__wrapper.no-bg {
+    width: 100%;
   }
 
   .fenzo-slider__content {

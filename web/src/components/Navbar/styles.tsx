@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+// ${props => props.theme.colors.brand}
+
 export const NavbarResponsive = styled.header.attrs(props => ({
   className: 'responsive-header',
 }))`
@@ -15,8 +17,8 @@ export const NavbarResponsive = styled.header.attrs(props => ({
       svg {
         max-height: 35px;
         path {
-          color: ${props => props.theme.colors.brand};
-          fill: ${props => props.theme.colors.brand};
+          color: #0033FF;
+          fill: #0033FF;
         }
       }
     }

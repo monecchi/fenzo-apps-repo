@@ -1,5 +1,9 @@
-// Global styles
+//
+// Global Reset styles (borrowed from iFood)
+//
 import { createGlobalStyle } from 'styled-components';
+
+// ${props => props.theme.colors.brand}
 
 export default createGlobalStyle`
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -20,19 +24,20 @@ export default createGlobalStyle`
     /* 2 */
   }
 /* Sections
+  *
    ========================================================================== */
 /**
  * Remove the margin in all browsers.
  */
   body {
     margin: 0;
-    font-family: 'soleil', sans-serif;
+    font-family: 'soleil', sans-serif !important;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.7;
     text-align: left;
-    color: ${props => props.theme.colors.text};
-    background: ${props => props.theme.colors.background};
+    color: #8492A6;
+    background: #F8F8FB;
     height: 100%;
     overflow-x: hidden;
     scroll-behavior: auto;
@@ -299,7 +304,7 @@ template {
   }
 
   a {
-    color: ${props => props.theme.colors.brand_alt};
+    color: #1652F0;
     background-color: transparent;
     cursor: default;
     text-decoration: none;
@@ -327,7 +332,7 @@ template {
 
   ::selection {
     color: #fff;
-    background: ${props => props.theme.colors.brand};
+    background: #0033FF;
   }
 
   .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
@@ -335,7 +340,7 @@ template {
     font-family: inherit;
     font-weight: 500;
     line-height: 1.3;
-    color: ${props => props.theme.colors.headings};
+    color: #3C4858;
   }
 
   /* svg */
@@ -344,12 +349,12 @@ template {
     position: relative;
   }
   .icon-app svg {
-    color: ${props => props.theme.colors.text};
+    color: #8492A6;
   }
-  .icon-app svg [stroke=${props => props.theme.colors.brand}] {
+  .icon-app svg [stroke="#0033FF"] {
     stroke: currentColor;
   }
-  .icon-app svg [fill=${props => props.theme.colors.brand}] {
+  .icon-app svg [fill="#0033FF"] {
     fill: currentColor;
   }
   .icon-app svg, .icon-app img {
@@ -511,7 +516,7 @@ template {
     overflow-y: auto;
   }
   .text-primary {
-    color: ${props => props.theme.colors.text_primary} !important;
+    color: #0033FF !important;
   }
   .text-center {
     text-align: center !important;

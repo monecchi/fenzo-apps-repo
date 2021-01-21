@@ -1,0 +1,72 @@
+//
+// Services slider
+//
+
+// fenzo
+
+.service_slider {
+  position: relative;
+
+  .slick-slide {
+    background-color: #F8F8FB;
+    width: 300px !important;
+    max-height: 150px !important;
+    min-height: 150px;
+  }
+
+  .service__slide {
+    width: 300px;
+    height: 150px;
+    margin-right: 15px;
+    border-radius: .25rem !important;
+  }
+
+  .service__slider-icon {
+    margin-bottom: 1.5rem;
+  }
+
+  .slider-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 1rem;
+    height: 150px;
+
+  }
+
+  .slick-slide>div {
+    width: 300px !important;
+  }
+
+  .slick-slider {
+    text-align: left !important;
+    height: 150px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .slick-slider .slick-slide {
+    margin-right: 15px;
+  }
+
+  .slider-item {
+    display: inline-block !important;
+    justify-content: space-around !important;
+    width: 300px !important;
+    min-width: 300px !important;
+    height: 150px !important;
+  }
+
+  .slick-list {
+    border-radius: 0 !important;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .service_slider {
+    .slick-slider {
+      height: 150px !important;
+    }
+  }
+}
