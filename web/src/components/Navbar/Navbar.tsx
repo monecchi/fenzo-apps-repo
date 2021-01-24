@@ -19,13 +19,13 @@ import NavbarTelephone from './Telephone/index'
 import Icon from '../Icon/index';
 
 
-const Navbar: React.FC = ({children}) => {
+const Navbar: React.FC = (props) => {
 
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <>
-      <NavbarResponsive>
+      <NavbarResponsive className={'responsive-header simple-header'}>
         <div className={'responsive-header__container'}>
 
           {/* Navbar Logo */}
@@ -43,7 +43,7 @@ const Navbar: React.FC = ({children}) => {
           <NavbarNav />
 
           {/* Navbar Telephone Component */}
-          <NavbarTelephone telephone={'21 3594-2652'} phone_number={35942652} />
+          <NavbarTelephone telephone={'21 97646-8712'} phone_number={976468712} />
 
           {/* Navbar Menu Toggle */}
           <div className="responsive-header__toggle-menu">
@@ -55,7 +55,7 @@ const Navbar: React.FC = ({children}) => {
           </div>
 
           {/* Navbar Children */}
-          {children}
+          {props.children}
 
         </div>
       </NavbarResponsive>

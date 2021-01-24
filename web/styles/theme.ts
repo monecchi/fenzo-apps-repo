@@ -12,6 +12,18 @@ const fonts = {
 }
 
 const colors = {
+  blue: {
+    50:  '#e1ebff',
+    100: '#b1c2ff',
+    200: '#7e99ff',
+    300: '#4c70ff',
+    400: '#1a47ff',
+    500: '#002ee6',
+    600: '#0024b4',
+    700: '#001982',
+    800: '#000e51',
+    900: '#000521',
+  },
   primary: {
     50:  '#e1ebff',
     100: '#b1c2ff',
@@ -26,10 +38,16 @@ const colors = {
   },
 }
 
-const Button = {
-  button: {
-    _focus: {
-      boxShadow: '0 4px 11px rgba(190, 194, 255, 0.28)'
+const Components = {
+  Component: {
+    Accordion: {
+      baseStyle: {
+        button: {
+          _focus: {
+            boxShadow: '0 4px 11px rgba(190, 194, 255, 0.28)'
+          }
+        }
+      }
     }
   }
 }
@@ -55,7 +73,7 @@ const customTheme = extendTheme({
   fonts,
   colors,
   zIndices,
-  Button
+  Components
 })
 
 export default customTheme

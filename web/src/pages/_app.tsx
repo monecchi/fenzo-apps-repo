@@ -1,7 +1,7 @@
 import React from 'react'
 import { AppProps } from 'next/app'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'; // import { ThemeProvider, theme, CSSReset } from '@chakra-ui/react';
-import { Global } from "@emotion/react"
+//import { Global } from "@emotion/react"
 
 // styled-components global theme imports (not being used in favor of chakra-ui)
 //import { ThemeProvider } from 'styled-components' // styled-components theme provider
@@ -11,7 +11,7 @@ import '../../styles/global.css' // global.css styles
 
 import GlobalStyle from '../../styles/global' // Custom global reset
 
-import fonts from '../../styles/font-face' // <Global styles={fonts} />
+//import fonts from '../../styles/font-face' // <Global styles={fonts} />
 import customTheme from '../../styles/theme'
 
 // const customTheme = {

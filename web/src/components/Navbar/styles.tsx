@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 // ${props => props.theme.colors.brand}
 
-export const NavbarResponsive = styled.header.attrs(props => ({
-  className: 'responsive-header',
+export const NavbarResponsive = styled.header.attrs((...props) => ({
 }))`
   .responsive-header__logo {
     svg {
@@ -33,4 +32,24 @@ export const NavbarResponsive = styled.header.attrs(props => ({
     color: currentColor;
   }
 
+  /* Navbar - only centered logo */
+  .responsive-header {
+    &.simple-header {
+      .search-input {
+        display: none;
+      }
+      .responsive-header__container {
+        justify-content: center !important;
+      }
+      .responsive-header__wrapper-links {
+        display: none;
+      }
+      .responsive-header__telephone {
+        display: none;
+      }
+      .responsive-header__toggle-menu {
+        display: none;
+      }
+    }
+  }
 `;

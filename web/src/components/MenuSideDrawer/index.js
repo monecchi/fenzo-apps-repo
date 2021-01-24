@@ -1,7 +1,5 @@
 import React from 'react'
-
 import { useDisclosure } from "@chakra-ui/react"
-
 import {
   Button,
   Input,
@@ -14,35 +12,35 @@ import {
   DrawerCloseButton,
 } from "@chakra-ui/react"
 
-const MenuSideDrawer = (props) => {
+const MenuSideDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef()
-  const toggleRef = props
 
   return (
     <>
-      <Button ref={btnRef} colorScheme="primary.500" onClick={onOpen}>
-        Open
+      <Button ref={btnRef} colorScheme="blue" onClick={onOpen}>
+        Abrir
       </Button>
       <Drawer
         isOpen={isOpen}
+        onClose={onClose}
         placement="right"
-        finalFocusRef={toggleRef}
+        finalFocusRef={btnRef}
       >
         <DrawerOverlay>
           <DrawerContent>
             <DrawerCloseButton />
-            <DrawerHeader>Create your account</DrawerHeader>
+            <DrawerHeader>Enviar Mensagem</DrawerHeader>
 
             <DrawerBody>
-              <Input placeholder="Type here..." />
+              <Input placeholder="Digite..." />
             </DrawerBody>
 
             <DrawerFooter>
-              <Button variant="outline" mr={3} onClick={onClose}>
-                Cancel
+              <Button variant="outline" colorScheme="blue" mr={3} onClick={onClose}>
+                Cancelar
               </Button>
-              <Button color="blue">Save</Button>
+              <Button color="blue">Enviar</Button>
             </DrawerFooter>
           </DrawerContent>
         </DrawerOverlay>

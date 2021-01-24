@@ -18,8 +18,6 @@ const sliderProps = {
 
 //{/*<ServiceList />*/}
 
-const toggleRef = React.createRef()
-
 const Home: React.FC = () => {
   return (
     <div>
@@ -42,7 +40,7 @@ const Home: React.FC = () => {
           />
         </div>
       </main>
-      <MenuSideDrawer toggleRef={toggleRef} />
+      <MenuSideDrawer />
       <Footer />
     </div>
   )

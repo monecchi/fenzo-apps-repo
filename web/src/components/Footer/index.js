@@ -1,4 +1,7 @@
 import React from 'react'
+import { Flex } from '@chakra-ui/react'
+
+//export const Footer = (props) => <Flex as="footer" py="8rem" {...props} />
 
 // Footer Styles
 import './styles.scss'
@@ -12,6 +15,7 @@ import FooterLogo from '../../assets/logo/fenzo-logo-cor.svg';
 const Footer = (props) => {
 
   return (
+    <Flex as="footer" py="3.5rem">
     <div className="footer align-items-center">
       <ul className="nav">
         <li className="nav-item">
@@ -25,6 +29,7 @@ const Footer = (props) => {
         </div>
       </div>
     </div>
+    </Flex>
   )
 
 };
