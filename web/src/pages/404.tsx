@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import Navbar from '../components/Navbar/Navbar'
+import Link from 'next/link'
 import BaseLayout from '../components/Layouts/BaseLayout'
 import BaseContainer from '../components/Layouts/BaseContainer'
 import { Box, Center, Heading, Text, Button } from "@chakra-ui/react"
@@ -65,7 +65,7 @@ const Page404: React.FC = () => {
       <Head>
         <title>404 - Página não econtrada</title>
       </Head>
-      <BaseLayout hasNavbar={false}>
+      <BaseLayout hasNavbar={true}>
         <BaseContainer>
           <Box as="div" py={{ base: "4rem", sm: "4rem", md: "4rem", lg: "8rem" }} minH={"calc(100vh - 50px)"} justifyContent="center" alignItems="center">
             <Center>
@@ -74,21 +74,23 @@ const Page404: React.FC = () => {
             <Heading mt="1.8rem" fontSize={{ base: "1rem", md: "32px", lg: "32px" }}>Ops, página não encontrada</Heading>
             <Text align="center">Esse conteúdo não existe mais!</Text>
             <Center mt="1rem">
-              <Button
-                leftIcon={<Icon icon="arrow-left" size={18} color="blue" />}
-                colorScheme="blue"
-                size="lg"
-                variant="ghost"
-                borderRadius="4px"
-                transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
-                bg="blue.50"
-                _hover={{ bg: "blue.500", color: "white" }}
-                _focus={{
-                  boxShadow: "none",
-                }}
-              >
-                voltar
+              <Link href="/">
+                <Button
+                  leftIcon={<Icon icon="arrow-left" size={18} color="blue" />}
+                  colorScheme="blue"
+                  size="lg"
+                  variant="ghost"
+                  borderRadius="4px"
+                  transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
+                  bg="blue.50"
+                  _hover={{ bg: "blue.500", color: "blue" }}
+                  _focus={{
+                    boxShadow: "none",
+                  }}
+                >
+                  voltar
             </Button>
+              </Link>
             </Center>
           </Box>
         </BaseContainer>

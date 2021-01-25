@@ -11,8 +11,8 @@ import Icon from '../../Icon/index';
 export const SliderNextButton = (props) => {
   const { onClick } = props;
   return (
-    <div className="fenzo-slider__next slick-next" onClick={onClick}>
-      <button className="fenzo-slider__arrow-button fenzo-slider__next">
+    <div className="fenzo_slider__next slick-next" onClick={onClick}>
+      <button className="fenzo_slider__arrow-button fenzo_slider__next">
         <Icon color="currentColor" size={36} icon="chevron-right" />
       </button>
     </div>
@@ -24,7 +24,7 @@ export const SliderPrevButton = (props) => {
   const { onClick } = props;
   return (
     <div className="fenzo-slider__next slick-prev" onClick={onClick}>
-      <button className="fenzo-slider__arrow-button fenzo-slider__next">
+      <button className="fenzo_slider__arrow-button fenzo_slider__next">
         <Icon color="currentColor" size={36} icon="chevron-left" />
       </button>
     </div>

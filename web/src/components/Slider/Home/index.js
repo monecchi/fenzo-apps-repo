@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 
 // Custom slick-theme.css
 import '../slick-theme.css';
+//import styles from '../slick-theme.module.css'
 
 import { SliderNextButton, SliderPrevButton } from '../NavButtons/SliderButtons';
 

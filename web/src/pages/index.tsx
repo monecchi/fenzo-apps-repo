@@ -8,13 +8,9 @@ import Navbar from '../components/Navbar/Navbar'
 import SliderHome from '../components/Slider/Home'
 import ServiceSlider from '../components/Slider/HomeServices/index'
 import MenuSideDrawer from '../components/MenuSideDrawer'
-import ServiceList from '../util/hooks/useServices'
+//import ServiceList from '../util/hooks/useServices'
 import Hero from '../components/Hero'
 import Footer from '../components/Footer'
-
-const sliderProps = {
-  hasImage: true
-}
 
 //{/*<ServiceList />*/}
 

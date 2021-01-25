@@ -58,7 +58,7 @@ const ServiceSlider = () => {
 
   const loading = true
 
-  if (loading) {
+  if (!services) {
     return (
       <div className="service_slider flex-container">
         <Slider {...settings} className="fenzo__service-slider">
