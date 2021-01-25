@@ -12,6 +12,7 @@ const fonts = {
 }
 
 const colors = {
+  black: '#1F2D3D',
   blue: {
     50:  '#e1ebff',
     100: '#b1c2ff',

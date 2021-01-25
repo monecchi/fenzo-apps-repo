@@ -10,7 +10,7 @@ import { useServices } from '../../../util/hooks/useServices'
 //import '../slick-theme.css'
 import './service-slider.scss'
 
-import { Box, Image, Flex, Badge, Text, Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react';
+import { Box, Image, Flex, Badge, Heading, Text, Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react';
 
 import Icon from '../../Icon'
 import Link from 'next/link'
@@ -89,7 +89,7 @@ const ServiceSlider = () => {
               <div className="service__slide" style={{ backgroundColor: service.color }}>
                 <div className="slider-content">
                   <Icon icon={service.icon_name} size={42} color={service.icon_color} className="service__slider-icon" />
-                  <h4 className="lh-0">{service.title}</h4>
+                  <Heading as="h5" size="sm" color="black" className="lh-0">{service.title}</Heading>
                   <Text fontSize="sm" color="gray.800">{service.subtitle}</Text><Link href={`/servico/${service.slug}`}>ver mais</Link>
                 </div>
               </div>

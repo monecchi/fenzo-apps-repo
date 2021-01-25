@@ -1,6 +1,6 @@
 import React from 'react'
 import { AppProps } from 'next/app'
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'; // import { ThemeProvider, theme, CSSReset } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react'; // import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 //import { Global } from "@emotion/react"
 
 // styled-components global theme imports (not being used in favor of chakra-ui)

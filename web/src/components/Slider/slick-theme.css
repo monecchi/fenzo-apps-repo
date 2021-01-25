@@ -1,8 +1,8 @@
-@charset 'UTF-8';
-/* Slider */
+@charset "UTF-8";
+/* Slider - background: #fff url('../../pages/static/images/fenzo-loading.gif') center center no-repeat* obs: loader error/
 .slick-loading .slick-list
 {
-    background: #fff url('/fenzo-loading.gif') center center no-repeat;
+    background: none !important;
 }
 
 .slick-initialized .slick-slide {
