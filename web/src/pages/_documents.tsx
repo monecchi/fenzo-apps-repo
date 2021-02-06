@@ -1,6 +1,8 @@
 import React from 'react'
+import {ColorModeScript} from '@chakra-ui/react'
 import Document, { DocumentContext, DocumentInitialProps, Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+import theme from '../../styles/theme'
 //import Head from 'next/head'
 
 export default class MyDocument extends Document {
@@ -56,6 +58,7 @@ export default class MyDocument extends Document {
           />
         </Head>
         <body className="scroll-smooth">
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
         </body>

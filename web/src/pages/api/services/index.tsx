@@ -1,4 +1,4 @@
-import { projects } from '../../../util/data/mockData'
+import { projects } from '../../../data/mockData'
 
 //
 // API - List all projects (services)

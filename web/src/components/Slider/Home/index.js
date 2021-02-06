@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 
 // Slick Carousel Default Styles
-import "slick-carousel/slick/slick.css";
+//import "slick-carousel/slick/slick.css";
 //import "slick-carousel/slick/slick-theme.css";
 
 // Custom slick-theme.css
-import '../slick-theme.css';
+//import '../slick-theme.css';
+import SlickThemeCustomStyles from '../styles/slick-theme-custom' // jsx styles overrides custom slick-theme.css
 //import styles from '../slick-theme.module.css'
 
 import { SliderNextButton, SliderPrevButton } from '../NavButtons/SliderButtons';
@@ -43,7 +44,7 @@ const settings = {
 //
 const HomeSlider = () => {
   return (
-    <>
+    <React.Fragment>
       <div className="home_slider flex-container">
         <Slider {...settings} className="fenzo_home_slider slider-dark">
           <div className="slider-item">
@@ -103,8 +104,8 @@ const HomeSlider = () => {
       </div>
       <style jsx>{`
 
-    `}</style>
-    </>
+      `}</style>
+    </React.Fragment>
   )
 
 }

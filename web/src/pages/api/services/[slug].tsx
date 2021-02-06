@@ -1,4 +1,4 @@
-import { projects } from '../../../util/data/mockData'
+import { projects } from '../../../data/mockData'
 
 //
 // Project route handler, needs to be string, both id and slug

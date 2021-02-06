@@ -14,7 +14,7 @@ import FooterLogo from '../../assets/logo/fenzo-logo-cor.svg';
 const Footer = (props) => {
 
   return (
-    <Flex as="footer" py="3.5rem">
+    <Flex as="footer" py="3.5rem" w="100%" maxW="1366px">
     <div className={styles.footer + ' align-items-center'}>
       <ul className="nav">
         <li className="nav-item">

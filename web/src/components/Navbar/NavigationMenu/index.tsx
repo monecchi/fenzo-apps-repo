@@ -6,7 +6,7 @@ import Icon from '../../Icon';
 const NavbarNav = () => {
   return (
     <div className="responsive-header__wrapper-links">
-      <a className="btn btn--link btn--size-m btn--iconize responsive-header__button" role="link" aria-label="Sobre" tabIndex={0} href="/">
+      <a className="btn btn--link btn--size-m btn--iconize responsive-header__button" role="link" aria-label="Sobre" tabIndex={0} href="/fenzo-faz">
         <span className="icon-fenzo icon-fenzo--promotion btn__icon">
           <Icon color="currentColor" size={24} icon="fenzo-logo-icon" />
         </span>

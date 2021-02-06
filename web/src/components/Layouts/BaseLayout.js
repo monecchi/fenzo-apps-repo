@@ -1,6 +1,7 @@
 
 import React from "react";
 import PropTypes from 'prop-types';
+import PageTransition from '../../components/PageTransitions'
 import { Flex } from "@chakra-ui/react";
 //import BaseContainer from '../../components/Layouts/BaseContainer'
 import Navbar from '../../components/Navbar/Navbar'
@@ -11,11 +12,12 @@ const BaseLayout = ({hasNavbar, ...props}) => {
     <>
       {hasNavbar ? (
         <>
-          <Navbar />
+        <PageTransition>
           <Flex
             direction="column"
             align="center"
             m="0 auto"
+            py="2rem"
             className="main-layout"
             {...props}
           >
@@ -23,9 +25,11 @@ const BaseLayout = ({hasNavbar, ...props}) => {
               {props.children}
             </div>
           </Flex>
+          </PageTransition>
         </>
       ) : (
           <>
+          <PageTransition>
             <Flex
               direction="column"
               align="center"
@@ -37,6 +41,7 @@ const BaseLayout = ({hasNavbar, ...props}) => {
                 {props.children}
               </div>
             </Flex>
+            </PageTransition>
           </>
         )
       }

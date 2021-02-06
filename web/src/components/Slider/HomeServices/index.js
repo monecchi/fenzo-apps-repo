@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import Slider from "react-slick"
-import { useServices } from '../../../util/hooks/useServices'
+import { useServices } from '../../../hooks/useServices'
 
 // Slick Carousel Default Styles (already imported on main slider)
 //import "slick-carousel/slick/slick.css";
@@ -8,7 +8,7 @@ import { useServices } from '../../../util/hooks/useServices'
 
 // Custom slick-theme.css
 //import '../slick-theme.css'
-import './service-slider.scss'
+//import './service-slider.scss'
 
 import { Box, Image, Flex, Badge, Heading, Text, Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react';
 
@@ -66,7 +66,7 @@ const ServiceSlider = () => {
           {mockItems.fill(0).map((item, index) => (
             <div className="slider-item" key={index}>
               <div className="service__slide" style={{ backgroundColor: "#F8F8FB" }}>
-                <div className="slider-content" style={{ display: 'block'}} >
+                <div className="slider-content" style={{ display: 'block' }} >
                   <SkeletonCircle size="10" style={{ borderRadius: '0.25rem' }} />
                   <SkeletonText mt="3" noOfLines={2} spacing="4" height="20px" />
                 </div>
@@ -80,7 +80,7 @@ const ServiceSlider = () => {
   }
 
   return (
-    <>
+    <React.Fragment>
       <div className="service_slider flex-container">
         <Slider {...settings} className="fenzo__service-slider">
 
@@ -101,7 +101,7 @@ const ServiceSlider = () => {
       <style jsx>{`
 
     `}</style>
-    </>
+    </React.Fragment>
   )
 
 }

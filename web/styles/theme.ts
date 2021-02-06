@@ -3,12 +3,40 @@
 //
 
 import { extendTheme } from "@chakra-ui/react"
+import { mode } from "@chakra-ui/theme-tools"
+
+const config = {
+  initialColorMode: "light",
+  useSystemColorMode: false,
+}
 
 const fonts = {
-    fonts: {
-    body: "'soleil',-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-    heading: "'soleil',sans-serif",
-  }
+    body: "'soleil',-apple-system,BlinkMacSystemFont,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+    heading: "'soleil',-apple-system,BlinkMacSystemFont,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+}
+
+const styles = {
+  global: {
+    // styles for the `body`
+    body: {
+      bg: "gray.100",
+      color: "black",
+      fontSize: "1rem",
+    },
+    // styles for the `a`
+    a: {
+      color: "blue.500",
+      _hover: {
+        textDecoration: "none",
+      },
+    },
+    h1: {
+      lineHeight: 1.2,
+      fontWeight: "600",
+      fontSize: "1.875rem",
+      letterSpacing: ".035rem",
+    },
+  },
 }
 
 const colors = {
@@ -37,20 +65,57 @@ const colors = {
     800: '#000e51',
     900: '#000521',
   },
+  brand: {
+    blue: '#0033FF',
+    dark_blue: '#201E78',
+    dark: '#37384e',
+    customGray: '#4a4b65',
+    gray: '#737491',
+    light_gray: '#F8F8FB',
+    gray_dark: '#4a4b65',
+    gray_text: '#37384e'
+
+  },
+  gray: {
+    50: '#737491',
+    100: "#F5F8FA",
+    200: "#EFF2F5",
+    300: "#E4E6EF",
+    400: "#B5B5C3",
+    500: "#A1A5B7",
+    600: "#7E8299",
+    700: "#5E6278",
+    800: "#3F4254",
+    900: "#181C32"
+  },
 }
 
-const Components = {
-  Component: {
-    Accordion: {
-      baseStyle: {
-        button: {
-          _focus: {
-            boxShadow: '0 4px 11px rgba(190, 194, 255, 0.28)'
-          }
-        }
+const components = {
+  Heading: {
+    baseStyle: (props) => ({
+      fontWeight: "600",
+    }),
+  },
+  Link: {
+    baseStyle: {
+      fontWeight: "inherit",
+      _hover: {
+        textDecoration: "none",
+      },
+      _focus: {
+        boxShadow: "none",
       }
-    }
-  }
+    },
+  },
+  Button: {
+    baseStyle: {
+      fontWeight: "600",
+      rounded: "4px",
+      _focus: {
+        boxShadow: "none",
+      }
+    },
+  },
 }
 
 const zIndices = {
@@ -71,10 +136,12 @@ const zIndices = {
 
 
 const customTheme = extendTheme({
+  config,
   fonts,
   colors,
+  styles,
   zIndices,
-  Components
+  components
 })
 
 export default customTheme

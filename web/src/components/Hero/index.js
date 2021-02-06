@@ -29,8 +29,9 @@ export default function Hero({
       maxW="1366px"
       minH="70vh"
       m="0 auto"
-      px={8}
-      mb={16}
+      px={5}
+      mt={{ base: 8, sm: 8, md: 8, lg: 0 }}
+      mb={{ base: 8, sm: 8, md: 8, lg: 0 }}
       {...rest}
     >
       <Stack
@@ -41,10 +42,11 @@ export default function Hero({
         <Heading
           as="h1"
           size="xl"
-          fontFamily= "'soleil',sans-serif"
           fontWeight="700"
           color="primary.800"
           textAlign={["center", "center", "left", "left"]}
+          mt={{ base: 2, sm: 2, md: 0, lg: 0 }}
+          mb={{ base: 2, sm: 0, md: 0, lg: 0 }}
         >
           {title}
         </Heading>
@@ -53,10 +55,10 @@ export default function Hero({
           size="md"
           color="primary.800"
           opacity="0.8"
-          fontFamily= "'soleil',sans-serif"
           fontWeight="400"
-          lineHeight={1.5}
+
           textAlign={["center", "center", "left", "left"]}
+          mt={{ base: 2, sm: 2, md: 0, lg: 0 }}
         >
           {subtitle}
         </Heading>
@@ -64,8 +66,9 @@ export default function Hero({
           <Button
             colorScheme="primary"
             borderRadius="base" // none, sm, base, md, lg, xl, "2xl": "1rem", "3xl": "1.5rem",  full: "9999px",
-            py="4"
-            px="4"
+            py={5}
+            px={4}
+            mt={4}
             lineHeight="1"
             size="lg"
             variant="solid"
@@ -83,8 +86,8 @@ export default function Hero({
           Solicite o seu orçamento.
         </Text>
       </Stack>
-      <Box w={{ base: "80%", sm: "60%", md: "50%" }} mb={{ base: 12, md: 0 }}>
-        <Image src={image} size="100%" rounded="0.35rem" shadow="xl" />
+      <Box w={{ base: "100%", sm: "100%", md: "50%", lg: "50%" }} mb={{ base: 0, md: 0 }}>
+        <Image src={image} size="100%" rounded="0.35rem" shadow="xl" mb={{ base: 5, sm: 2, md: 0 }}/>
       </Box>
     </Flex>
   )

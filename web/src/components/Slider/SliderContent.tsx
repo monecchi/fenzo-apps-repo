@@ -2,7 +2,7 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
-import './Home/fenzo-home-slider.css'
+//import './Home/fenzo-home-slider.css'
 //import styles from './Home/fenzo-home-slider.module.css'
 
 interface ISliderContent {
@@ -36,7 +36,7 @@ const SliderHomeContent = (props: ISliderContent) => {
   const noBg = !image ? ' no-bg' : null;
 
   return (
-    <>
+    <React.Fragment>
       {url && hasButton ? (
         <div className={'fenzo_slider__wrapper'} key={id}>
           <div className={bgCover} style={slideBackground}>
@@ -74,7 +74,7 @@ const SliderHomeContent = (props: ISliderContent) => {
             </a>
           </Link>
         )}
-    </>
+    </React.Fragment>
   )
 
 }
