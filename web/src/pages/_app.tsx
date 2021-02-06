@@ -4,7 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react'; // import { ChakraProvider, e
 import Navbar from '../components/Navbar/Navbar'
 import FontFace from '../../styles/font-face'
 //import SlickThemeCustomStyles from '../components/Slider/styles/slick-theme-custom' // jsx styles overrides custom slick-theme.css
-import FenzoSlickSlider from '../components/Slider/styles/fenzo-slick-slider' // jsx styles overrides custom slick-theme.css
+//import FenzoSlickSlider from '../components/Slider/styles/fenzo-slick-slider' // jsx styles overrides custom slick-theme.css
 
 //import { Global } from "@emotion/react"
 
