@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
-import SEO from '../../next-seo.config'
+import SEO from '../../next-seo.config.js'
 //import '../../styles/Fenzo.module.css'
 //import styles from '../../styles/Fenzo.module.css'
 import PageTransition from '../components/PageTransitions'
