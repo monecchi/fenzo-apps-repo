@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
-import SEO from '../../next-seo.config.js'
+//import SEO from '../../next-seo.config.js'
 //import '../../styles/Fenzo.module.css'
 //import styles from '../../styles/Fenzo.module.css'
 import PageTransition from '../components/PageTransitions'
@@ -23,7 +23,7 @@ const Home: React.FC = () => {
       <Head>
         <title>Fenzo Serralheria</title>
       </Head>
-      <DefaultSeo {...SEO} />
+      {/*<DefaultSeo {...SEO} />*/}
       <PageTransition>
         <main className="main-layout">
           <div className="home-page">
