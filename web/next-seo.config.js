@@ -1,5 +1,9 @@
 const title = "Fenzo Serralheria";
+<<<<<<< HEAD
 const description = "Portões, portas, guarda corpo — Serralheria em alumínio de alto padrão.";
+=======
+const description = "Alumínio alto padrão. Portões, portas, janelas, guarda corpo, vidro temperado";
+>>>>>>> 9f1d41bc4811bcd3aad255ffc1144cd2e396f36a
 
 const SEO = {
   title,
@@ -13,7 +17,11 @@ const SEO = {
     description,
     images: [
       {
+<<<<<<< HEAD
         url: "/banner-fenzo.png",
+=======
+        url: "/fenzo-banner.jpg",
+>>>>>>> 9f1d41bc4811bcd3aad255ffc1144cd2e396f36a
         alt: title,
         width: 2240,
         height: 1260,
