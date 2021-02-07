@@ -18,7 +18,8 @@ export const projects = [
     hasButton: true,
     url: '',
     cssClass: '',
-    color: '#E3EDFF'
+    color: '#E3EDFF',
+    search_keys: "portão portao porta portões portoes"
   },
   {
     id: 2,
@@ -35,7 +36,8 @@ export const projects = [
     hasButton: true,
     url: '',
     cssClass: '',
-    color: '#F3EEFF'
+    color: '#F3EEFF',
+    search_keys: "vidro vidros temperado"
   },
   {
     id: 3,
@@ -52,7 +54,8 @@ export const projects = [
     hasButton: true,
     url: '',
     cssClass: '',
-    color: '#FFF1F0'
+    color: '#FFF1F0',
+    search_keys: "escada corrimão corrimao grade"
   },
   {
     id: 4,
@@ -69,7 +72,8 @@ export const projects = [
     hasButton: true,
     url: '',
     cssClass: '',
-    color: '#F5F8FF'
+    color: '#F5F8FF',
+    search_keys: "telhado cobertura vidro"
   },
   {
     id: 5,
@@ -86,7 +90,8 @@ export const projects = [
     hasButton: true,
     url: '',
     cssClass: '',
-    color: '#E3EDFF'
+    color: '#E3EDFF',
+    search_keys: "serra serralheiro aluminio alumínio"
   },
   {
     id: 6,
@@ -103,7 +108,8 @@ export const projects = [
     hasButton: true,
     url: '',
     cssClass: '',
-    color: '#E3EDFF'
+    color: '#E3EDFF',
+    search_keys: "automático automatização auto"
   },
 ];
 
