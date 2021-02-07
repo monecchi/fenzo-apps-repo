@@ -1,10 +1,5 @@
 import React from 'react'
 import Head from 'next/head'
-<<<<<<< HEAD
-=======
-import { DefaultSeo } from 'next-seo'
-//import SEO from '../../next-seo.config.js'
->>>>>>> 9f1d41bc4811bcd3aad255ffc1144cd2e396f36a
 //import '../../styles/Fenzo.module.css'
 //import styles from '../../styles/Fenzo.module.css'
 import PageTransition from '../components/PageTransitions'
@@ -22,40 +17,38 @@ import FooterFull from '../components/Footer/FooterFull'
 
 const Home: React.FC = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>Fenzo Serralheria</title>
       </Head>
-<<<<<<< HEAD
-=======
-      {/*<DefaultSeo {...SEO} />*/}
->>>>>>> 9f1d41bc4811bcd3aad255ffc1144cd2e396f36a
-      <PageTransition>
-        <main className="main-layout">
-          <div className="home-page">
-            <HomeSlider />
-            <CTA
-              title="Alumínio é luxo"
-              content="Alumínio como elemento principal na decoração. Conheça algumas aplicações deste material nobre e versátil que lidera a tendência de mercado."
-              image="http://localhost:3000/aluminio-sanfonada-vidro.jpg"
-              ctaLink="/"
-              ctaText="Ler artigo"
-            />
-            <ServiceSlider />
-            <Hero
-              title="Serralheria moderna"
-              subtitle="Especialistas em serralheria de alto padrão."
-              image="http://localhost:3000/aluminio-sanfonada-vidro.jpg"
-              ctaLink="/"
-              ctaText="A Fenzo Faz"
-            />
-          </div>
-        </main>
+      <div>
+        <PageTransition>
+          <main className="main-layout">
+            <div className="home-page">
+              <HomeSlider />
+              <CTA
+                title="Alumínio é luxo"
+                content="Alumínio como elemento principal na decoração. Conheça algumas aplicações deste material nobre e versátil que lidera a tendência de mercado."
+                image="http://localhost:3000/aluminio-sanfonada-vidro.jpg"
+                ctaLink="/"
+                ctaText="Ler artigo"
+              />
+              <ServiceSlider />
+              <Hero
+                title="Serralheria moderna"
+                subtitle="Especialistas em serralheria de alto padrão."
+                image="http://localhost:3000/aluminio-sanfonada-vidro.jpg"
+                ctaLink="/"
+                ctaText="A Fenzo Faz"
+              />
+            </div>
+          </main>
 
-        {/*<Footer />*/}
-        <FooterFull />
-      </PageTransition>
-    </div>
+          {/*<Footer />*/}
+          <FooterFull />
+        </PageTransition>
+      </div>
+    </>
   )
 }
 
