@@ -126,9 +126,9 @@ const About = ({ tools }) => {
   );
 };
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const res = await axios.get(
-    `${process.env.API_URL}\/api\/v1`
+    process.env.API_URL + `\/api\/v1`
   )
 
   //console.log(res.data)
