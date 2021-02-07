@@ -53,7 +53,7 @@ const HomeSlider = () => {
               title="Seu portão elegante e durável"
               upperTitle="Portões de alumínio"
               subtitle="A Fenzo faz ®"
-              image="http://localhost:3000/portoes-aluminio-hero-default.png"
+              image="/portoes-aluminio-hero-default.png"
               url="/servico/portoes-de-aluminio/"
               hasButton={true}
               hasImage={true}
@@ -67,7 +67,7 @@ const HomeSlider = () => {
               title="Guarda corpo em alumínio e vidro temperado"
               upperTitle="Guarda Corpo"
               subtitle="Modernidade e requinte"
-              image="http://localhost:3000/guarda-corpo-vidro-by-fenzo.png"
+              image="/guarda-corpo-vidro-by-fenzo.png"
               url="/servico/portoes-de-aluminio/"
               hasButton={true}
               hasImage={true}

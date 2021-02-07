@@ -29,7 +29,7 @@ const Home: React.FC = () => {
               <CTA
                 title="Alumínio é luxo"
                 content="Alumínio como elemento principal na decoração. Conheça algumas aplicações deste material nobre e versátil que lidera a tendência de mercado."
-                image="http://localhost:3000/aluminio-sanfonada-vidro.jpg"
+                image="/aluminio-sanfonada-vidro.jpg"
                 ctaLink="/"
                 ctaText="Ler artigo"
               />
@@ -37,7 +37,7 @@ const Home: React.FC = () => {
               <Hero
                 title="Serralheria moderna"
                 subtitle="Especialistas em serralheria de alto padrão."
-                image="http://localhost:3000/aluminio-sanfonada-vidro.jpg"
+                image="/aluminio-sanfonada-vidro.jpg"
                 ctaLink="/"
                 ctaText="A Fenzo Faz"
               />
