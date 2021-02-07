@@ -126,7 +126,7 @@ const About = ({ tools }) => {
   );
 };
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const res = await axios.get(
     process.env.API_URL + '/api/v1'
   )
