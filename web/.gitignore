@@ -5,11 +5,8 @@
 /.pnp
 .pnp.js
 
-<<<<<<< HEAD
 #/*.js # When not working with .js files on a typescript project
 
-=======
->>>>>>> 9f1d41bc4811bcd3aad255ffc1144cd2e396f36a
 # testing
 /coverage
 
@@ -30,6 +27,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env*.local
 .env.local
 .env.development.local
 .env.test.local

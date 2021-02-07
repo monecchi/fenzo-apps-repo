@@ -8,6 +8,7 @@ import BaseContainer from '../../components/Layouts/BaseContainer'
 import {
   StaticGoogleMap,
   Marker,
+  Direction,
   Path,
 } from 'react-static-google-map'
 
