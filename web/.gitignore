@@ -5,7 +5,7 @@
 /.pnp
 .pnp.js
 
-/*.js
+#/*.js # When not working with .js files on a typescript project
 
 # testing
 /coverage

@@ -10,7 +10,7 @@ import { NavbarResponsive } from './styles' // styled components
 
 import Logo from '../../assets/logo/fenzo-logo-cor-slogan.svg'
 import LogoNeutral from '../../assets/logo/fenzo-logo-unfilled.svg'
-import NavbarSearch from './Search/index'
+//import NavbarSearch from './Search/index'
 import NavSearchApi from './SearchApi/index'
 import NavbarNav from './NavigationMenu/index'
 import NavbarTelephone from './Telephone/index'

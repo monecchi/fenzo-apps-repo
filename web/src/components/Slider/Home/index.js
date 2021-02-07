@@ -7,7 +7,7 @@ import Slider from "react-slick";
 
 // Custom slick-theme.css
 //import '../slick-theme.css';
-import SlickThemeCustomStyles from '../styles/slick-theme-custom' // jsx styles overrides custom slick-theme.css
+//import SlickThemeCustomStyles from '../styles/slick-theme-custom' // jsx styles overrides custom slick-theme.css
 //import styles from '../slick-theme.module.css'
 
 import { SliderNextButton, SliderPrevButton } from '../NavButtons/SliderButtons';

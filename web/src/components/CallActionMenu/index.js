@@ -17,7 +17,7 @@ import {
 } from '@chakra-ui/react'
 
 import Icon from '../Icon'
-import TelephoneIcon from '../../assets/icons/telephone.svg'
+//import TelephoneIcon from '../../assets/icons/telephone.svg'
 import { PhoneCall, WhatsappLogo } from 'phosphor-react'
 
 //

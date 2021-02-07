@@ -36,6 +36,9 @@ const About = ({ tools }) => {
 
   return (
     <>
+    <Head>
+      <title>Sobre a Fenzo</title>
+    </Head>
     <Decoration horizontalAlign="left" verticalAlign="top" />
     <BaseLayout hasNavbar={true}>
       <BaseContainer>
