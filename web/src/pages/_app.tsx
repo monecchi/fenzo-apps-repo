@@ -5,6 +5,7 @@ import { ChakraProvider } from '@chakra-ui/react'; // import { ChakraProvider, e
 import { DefaultSeo } from 'next-seo'
 import SEO from '../../next-seo.config'
 import FontFace from '../../styles/font-face'
+import Nprogress from '../components/Loading/Progress' //ngprogress on router change
 import Navbar from '../components/Navbar/Navbar'
 //import SlickThemeCustomStyles from '../components/Slider/styles/slick-theme-custom' // jsx styles overrides custom slick-theme.css
 //import FenzoSlickSlider from '../components/Slider/styles/fenzo-slick-slider' // jsx styles overrides custom slick-theme.css
@@ -45,6 +46,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
       <DefaultSeo {...SEO} />
       <FontFace />
       {/* <GlobalStyle /> */}
+      <Nprogress />
       <Navbar />
       <Component {...pageProps} />
     </ChakraProvider>

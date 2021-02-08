@@ -30,7 +30,9 @@ const Navbar: React.FC = (props) => {
 
           {/* Navbar Logo */}
           <div className={'responsive-header__logo'}>
-            <a href="/" role="link" arial-label="Fenzo" className={"p-0 lh-0"}><Logo /></a>
+            <Link href="/">
+              <a className={"p-0 lh-0"} role="link" arial-label="Fenzo"><Logo /></a>
+            </Link>
           </div>
 
           {/* Navbar Search Component*/}
@@ -47,11 +49,11 @@ const Navbar: React.FC = (props) => {
 
           {/* Navbar Menu Toggle */}
           <div className="responsive-header__toggle-menu">
-              <button className="btn btn--link btn--size-m btn--iconize" role="link" aria-label="Contato" onClick={onOpen}>
-                <span className="icon-fenzo icon-fenzo--contato btn__icon">
-                  <Icon color="#1652F0" size={56} icon="fenzo-menu-icon-bold" />
-                </span>
-              </button>
+            <button className="btn btn--link btn--size-m btn--iconize" role="link" aria-label="Contato" onClick={onOpen}>
+              <span className="icon-fenzo icon-fenzo--contato btn__icon">
+                <Icon color="#1652F0" size={56} icon="fenzo-menu-icon-bold" />
+              </span>
+            </button>
           </div>
 
           {/* Navbar Children */}

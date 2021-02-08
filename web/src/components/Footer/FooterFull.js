@@ -66,6 +66,7 @@ const Button = styled.button`
 //
 const FooterFull = () => {
   return (
+    <div>
     <Box
       pt="3rem"
       pb="2rem"
@@ -86,7 +87,7 @@ const FooterFull = () => {
           <Box flex="1.4">
             <Box width="85%">
               <Flex>
-                <Box d="flex" w="100%" justifyContent="start" alignItems="center" mb="1.5rem">
+                <Box d="flex" w="100%" className="call-action-wrapper" justifyContent="start" alignItems="center" mb="1.5rem">
                   <ChakraLink href="/" mr={4}>
                     <Icon as={LogoFooter} w="128px" h="auto" fill="brand.dark_blue" />
                   </ChakraLink>
@@ -151,6 +152,23 @@ const FooterFull = () => {
         </Flex>
       </Container>
     </Box>
+    <style>{`
+      @media only screen and (max-width: 48rem) {
+          .call-action-wrapper {
+            justify-content: flex-start !important;
+            align-items: flex-start !important;
+            flex-direction: column !important;
+          }
+          .call-action-wrapper a {
+              margin-bottom: 1.3rem !important;
+          }
+          .call-action-wrapper .chakra-button {
+              padding-right: 0 !important;
+              padding-left: 0 !important;
+          }
+      }
+    `}</style>
+    </div>
   );
 };
 

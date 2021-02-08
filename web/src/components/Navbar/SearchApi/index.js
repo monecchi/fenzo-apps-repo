@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { useServices } from '../../../hooks/useServices'
-import Icon from '../../Icon';
+import { Skeleton } from '@chakra-ui/react'
+import Icon from '../../Icon'
 
 //import style from '../../../../styles/Fenzo.module.css'
 
@@ -10,7 +11,7 @@ import Icon from '../../Icon';
 
 const NavSearchApi = () => {
 
-  const { services, isError } = useServices()
+  const { services, isLoading, isError } = useServices()
 
   const [display, setDisplay] = useState(false)
   const [searchTerm, setSearchTerm] = useState('');
@@ -71,7 +72,7 @@ const NavSearchApi = () => {
 
   if (!services) {
     return (
-      <div>Loading...</div>
+      <Skeleton w="100%" h="50px" maxW="450px" minW="370px" borderRadius="4px" borderColor="#f1f4f8" startColor="#f8f8fb" endColor="#f1f1f9" className="search-input" />
     )
   }
 
@@ -147,7 +148,6 @@ const NavSearchApi = () => {
           </ul>
         </div>
       }
-
     </div>
   );
 }
