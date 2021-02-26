@@ -28,7 +28,7 @@ import { Smiley, SmileyMeh } from 'phosphor-react'
 //<Decoration horizontalAlign="left" verticalAlign="top" decoImage={DecorationSVG} />
 
 
-const About = ({ tools }) => {
+const About = () => { // ({ tools }
 
   //const result = useFetch('/api/v1')
 
@@ -81,7 +81,7 @@ const About = ({ tools }) => {
           </Section>
           <Section>
             <Heading as="h5" color="brand.gray.500" size="md">Encontre a Fenzo</Heading>
-            <SimpleGrid columns={[1, 2, 3]} spacing={4} mt={8}>
+            {/* <SimpleGrid columns={[1, 2, 3]} spacing={4} mt={8}>
               {tools && tools
                 .filter((t) => t.fields.Platform === "Android")
                 .sort((x, y) => sorter(y.fields.ID, x.fields.ID))
@@ -96,7 +96,7 @@ const About = ({ tools }) => {
                     link={tool.fields.Link}
                   />
                 ))}
-            </SimpleGrid>
+            </SimpleGrid> */}
           </Section>
           <Section>
             <VStack align="stretch" spacing={4}>
@@ -126,21 +126,21 @@ const About = ({ tools }) => {
   );
 };
 
-export async function getStaticProps() {
-  const res = await axios.get(
-    process.env.API_URL + '/api/v1'
-  )
+// export async function getStaticProps() {
+//   const res = await axios.get(
+//     process.env.API_URL + '/api/v1'
+//   )
 
-  //console.log(res.data)
+//   //console.log(res.data)
 
-  const tools = res.data[0].tools
+//   const tools = res.data[0].tools
 
-  return {
-    props: {
-      tools,
-    },
-    revalidate: 600,
-  }
-}
+//   return {
+//     props: {
+//       tools,
+//     },
+//     revalidate: 600,
+//   }
+// }
 
 export default About;
