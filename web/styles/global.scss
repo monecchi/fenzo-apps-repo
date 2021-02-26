@@ -32,8 +32,6 @@ body {
   font-weight: 400;
   line-height: 1.7;
   text-align: left;
-  color: #8492A6;
-  background: #F8F8FB;
   height: 100%;
   overflow-x: hidden;
   scroll-behavior: auto;
@@ -538,6 +536,10 @@ margin-top: 0 !important;
 .image-cover {
   background: no-repeat 50%/cover;
 }
+.tight-text {
+  letter-spacing: -.03em;
+}
+
 .page-heading {
   font-size: 3.5rem;
   font-weight: 600;
@@ -546,6 +548,7 @@ margin-top: 0 !important;
   margin-bottom: 1.5rem;
 }
 
+
 @import './global.css';
 @import 'slick-carousel/slick/slick.css'; // slick slider from /node_modules
-@import './fenzo-slick-slider.scss';
+@import './fenzo-slick-slider.scss'; // custom slick slider styles

@@ -1,27 +1,39 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-
-import { useDisclosure } from "@chakra-ui/react"
-
-//import style from '../../../styles/Fenzo.module.css'
+import { useColorModeValue, useColorMode, useMediaQuery } from '@chakra-ui/react'
 
 // Navbar responsive styles & component
 import { NavbarResponsive } from './styles' // styled components
+import NavbarMobile from '../../components/Navbar/NavbarMobile'
 
 import Logo from '../../assets/logo/fenzo-logo-cor-slogan.svg'
-import LogoNeutral from '../../assets/logo/fenzo-logo-unfilled.svg'
+//import LogoNeutral from '../../assets/logo/fenzo-logo-unfilled.svg'
 //import NavbarSearch from './Search/index'
 import NavSearchApi from './SearchApi/index'
 import NavbarNav from './NavigationMenu/index'
 import NavbarTelephone from './Telephone/index'
+import ThemeToggle from '../../components/ThemeToggle'
 
 // RestoPizza Icons set
-import Icon from '../Icon/index';
+import Icon from '../Icon/index'
 
 
 const Navbar: React.FC = (props) => {
 
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [isLargerThan1280] = useMediaQuery('(min-width: 1280px)');
+
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    setIsMobile(isLargerThan1280);
+    console.log('screen size ' + isLargerThan1280);
+  }, [])
+
+  if (!isMobile) {
+    return (
+      <NavbarMobile isOpen={true} />
+    )
+  }
 
   return (
     <>
@@ -45,16 +57,17 @@ const Navbar: React.FC = (props) => {
           <NavbarNav />
 
           {/* Navbar Telephone Component */}
-          <NavbarTelephone telephone={'21 97646-8712'} phone_number={976468712} />
+          <NavbarTelephone telephone={'21 97646-8712'} phoneNumber={'976468712'} />
 
           {/* Navbar Menu Toggle */}
           <div className="responsive-header__toggle-menu">
-            <button className="btn btn--link btn--size-m btn--iconize" role="link" aria-label="Contato" onClick={onOpen}>
+            <button className="btn btn--link btn--size-m btn--iconize" role="link" aria-label="Contato">
               <span className="icon-fenzo icon-fenzo--contato btn__icon">
                 <Icon color="#1652F0" size={56} icon="fenzo-menu-icon-bold" />
               </span>
             </button>
           </div>
+          <ThemeToggle mobile={false} />
 
           {/* Navbar Children */}
           {props.children}
@@ -65,4 +78,4 @@ const Navbar: React.FC = (props) => {
   )
 }
 
-export default Navbar
+export default Navbar;

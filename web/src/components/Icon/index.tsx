@@ -9,7 +9,7 @@ import iconSet from "./selection.json";
 interface PropsIcon {
   color: string;
   icon: string;
-  size: any;
+  size: string | number;
   className?: string | any;
 }
 

@@ -67,92 +67,93 @@ const Button = styled.button`
 const FooterFull = () => {
   return (
     <div>
-    <Box
-      pt="3rem"
-      pb="2rem"
-      px="0"
-      mt={{ base: 0, md: "4rem" }}
-      backgroundColor="BlackAlpha.200" // #F9F9FB
-      as="footer"
-    >
-      <Container>
-        <Flex
-          borderBottom="1px solid #c4c4c4"
-          pb="3rem"
-          mb="2.5rem"
-          justify="space-between"
-          direction={{ base: "column", md: "column", lg: "row" }}
-          gridRowGap="2rem"
-        >
-          <Box flex="1.4">
-            <Box width="85%">
-              <Flex>
-                <Box d="flex" w="100%" className="call-action-wrapper" justifyContent="start" alignItems="center" mb="1.5rem">
-                  <ChakraLink href="/" mr={4}>
-                    <Icon as={LogoFooter} w="128px" h="auto" fill="brand.dark_blue" />
-                  </ChakraLink>
-                  <CallActionMenu />
-                </Box>
-              </Flex>
-              <Text mb="2.5rem" color="gray.600">
-                Somos especialistas em serralheria em alumínio de alto padrão.
-                Conte com a Fenzo para entregar o melhor em qualidade, elegância e bem estar.
+      <Box
+        pt="3rem"
+        pb="2rem"
+        px="0"
+        mt={{ base: 0, md: "4rem" }}
+        backgroundColor="#F9F9FB" // #F9F9FB
+        as="footer"
+      >
+        <Container>
+          <Flex
+            borderBottom="1px solid"
+            borderColor="brand.smooth_gray"
+            pb="3rem"
+            mb="2.5rem"
+            justify="space-between"
+            direction={{ base: "column", md: "column", lg: "row" }}
+            gridRowGap="2rem"
+          >
+            <Box flex="1.4">
+              <Box width="85%">
+                <Flex>
+                  <Box d="flex" w="100%" className="call-action-wrapper" justifyContent="start" alignItems="center" mb="1.5rem">
+                    <ChakraLink href="/" mr={4}>
+                      <Icon as={LogoFooter} w="128px" h="auto" fill="brand.dark_blue" />
+                    </ChakraLink>
+                    <CallActionMenu />
+                  </Box>
+                </Flex>
+                <Text mb="2.5rem" color="gray.600">
+                  Somos especialistas em serralheria em alumínio de alto padrão.
+                  Conte com a Fenzo para entregar o melhor em qualidade, elegância e bem estar.
 							</Text>
-              <Text color="gray.600">
-                ©2021 Fenzo Serralheria. Todos direitos reservados
+                <Text color="gray.600">
+                  ©2021 Fenzo Serralheria. Todos direitos reservados
 							</Text>
+              </Box>
             </Box>
-          </Box>
 
-          <Box flex=".7">
-            <Text mb="1.5rem" fontWeight="600">
-              Funcionamento
+            <Box flex=".7">
+              <Text mb="1.5rem" fontWeight="600">
+                Funcionamento
 						</Text>
-            <BusinessHours />
-          </Box>
+              <BusinessHours />
+            </Box>
 
-          <Box flex=".7">
-            <Text mb="1.5rem" fontWeight="600">
-              A Fenzo faz
+            <Box flex=".7">
+              <Text mb="1.5rem" fontWeight="600">
+                A Fenzo faz
 						</Text>
-            <FooterLink href="#!" color="brand.gray_dark">Solicitar Orçamento</FooterLink>
-            <FooterLink href="#!">Agendar visita técnica</FooterLink>
-            <FooterLink href="#!">FAQs</FooterLink>
-          </Box>
-          <Box flex=".7">
-            <Text mb="1.5rem" fontWeight="600">
-              Seguir
+              <FooterLink href="/orcamento" color="brand.gray_dark">Solicitar Orçamento</FooterLink>
+              <FooterLink href="#!">Agendar visita técnica</FooterLink>
+              <FooterLink href="#!">FAQs</FooterLink>
+            </Box>
+            <Box flex=".7">
+              <Text mb="1.5rem" fontWeight="600">
+                Seguir
 						</Text>
-            <FooterLink href="#!">Facebook</FooterLink>
-            <FooterLink href="#!">Instagram</FooterLink>
-            <FooterLink href="#!">Google</FooterLink>
-          </Box>
-        </Flex>
-        <Flex justify="center" align="center">
-          <Socials
-            href="#!"
-            imagePath="https://res.cloudinary.com/djksghat4/image/upload/v1606868551/chakra/twitter.svg"
-          />
-          <Socials
-            href="#!"
-            imagePath="https://res.cloudinary.com/djksghat4/image/upload/v1606868551/chakra/facebook.svg"
-          />
-          <Socials
-            href="#!"
-            imagePath="https://res.cloudinary.com/djksghat4/image/upload/v1606868551/chakra/instagram.svg"
-          />
-          <Socials
-            href="#!"
-            imagePath="https://res.cloudinary.com/djksghat4/image/upload/v1606868551/chakra/linkedin.svg"
-          />
-          <Socials
-            href="#!"
-            imagePath="https://res.cloudinary.com/djksghat4/image/upload/v1606868551/chakra/youtube.svg"
-          />
-        </Flex>
-      </Container>
-    </Box>
-    <style>{`
+              <FooterLink href="#!">Facebook</FooterLink>
+              <FooterLink href="#!">Instagram</FooterLink>
+              <FooterLink href="#!">Google</FooterLink>
+            </Box>
+          </Flex>
+          <Flex justify="center" align="center">
+            <Socials
+              href="#!"
+              imagePath="https://res.cloudinary.com/djksghat4/image/upload/v1606868551/chakra/twitter.svg"
+            />
+            <Socials
+              href="#!"
+              imagePath="https://res.cloudinary.com/djksghat4/image/upload/v1606868551/chakra/facebook.svg"
+            />
+            <Socials
+              href="#!"
+              imagePath="https://res.cloudinary.com/djksghat4/image/upload/v1606868551/chakra/instagram.svg"
+            />
+            <Socials
+              href="#!"
+              imagePath="https://res.cloudinary.com/djksghat4/image/upload/v1606868551/chakra/linkedin.svg"
+            />
+            <Socials
+              href="#!"
+              imagePath="https://res.cloudinary.com/djksghat4/image/upload/v1606868551/chakra/youtube.svg"
+            />
+          </Flex>
+        </Container>
+      </Box>
+      <style>{`
       @media only screen and (max-width: 48rem) {
           .call-action-wrapper {
             justify-content: flex-start !important;

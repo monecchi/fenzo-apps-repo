@@ -1,60 +1,30 @@
-
-import React from "react";
-import PropTypes from 'prop-types';
+import React from 'react'
 import PageTransition from '../../components/PageTransitions'
-import { Flex } from "@chakra-ui/react";
-//import BaseContainer from '../../components/Layouts/BaseContainer'
-import Navbar from '../../components/Navbar/Navbar'
+import { Flex, Box } from '@chakra-ui/react'
 
-const BaseLayout = ({hasNavbar, ...props}) => {
-  //const { hasNavbar } = props
+const BaseLayout = (props) => {
   return (
     <>
-      {hasNavbar ? (
-        <>
-        <PageTransition>
-          <Flex
-            direction="column"
-            align="center"
+      <PageTransition>
+        <Flex
+          direction="column"
+          alignItems="center"
+          //m="0 auto"
+          //mt={{ base: "0", sm: "80px", md: "80px", lg: "0" }}
+          className="home-page"
+          {...props}
+        >
+
+          <Box
+            w="100%"
             m="0 auto"
-            py="2rem"
-            className="main-layout"
-            {...props}
           >
-            <div className="home-page">
-              {props.children}
-            </div>
-          </Flex>
-          </PageTransition>
-        </>
-      ) : (
-          <>
-          <PageTransition>
-            <Flex
-              direction="column"
-              align="center"
-              m="0 auto"
-              className="main-layout"
-              {...props}
-            >
-              <div className="home-page">
-                {props.children}
-              </div>
-            </Flex>
-            </PageTransition>
-          </>
-        )
-      }
+            {props.children}
+          </Box>
+        </Flex>
+      </PageTransition>
     </>
   )
-}
-
-BaseLayout.propTypes = {
-  hasNavbar: PropTypes.bool
-};
-
-BaseLayout.defaultProps = {
-  hasNavbar: true
 }
 
 export default BaseLayout;

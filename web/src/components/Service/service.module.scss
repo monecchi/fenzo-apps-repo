@@ -1,24 +1,10 @@
-/* Services Page */
-
-@media only screen and (min-width: 960px) {
-  .home-page .fenzo-services__container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1366px !important;
-    margin: auto;
-    padding: 0px 30px;
-  }
-}
-
 .fenzo-services__container {
   display: flex;
 }
 
 .fenzo-services {
-  list-style: none;
   display: flex;
+  list-style: none;
   width: 100%;
   max-width: 1366px;
   justify-content: space-between;
@@ -29,23 +15,30 @@
 
 .fenzo-service-card {
   display: inline-flex;
-  min-width: 200px;
-  padding: 1rem;
-  background: #f5f8fa;
+  margin: 0.75rem;
+  padding: 0.75rem;
   border-radius: 0.35rem;
-  margin: 1rem;
+  background: #f5f8fa;
+
+  a {
+    display: inline-flex;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
-.fenzo-service-card a {
-  display: inline-flex;
-}
-
-.fenzo-service-card:first-child {
-  margin-left: 0;
-}
-
-.fenzo-service-card:last-child {
-  margin-right: 0;
+@media screen and (max-width: 1025px) {
+  .fenzo-services {
+    overflow-y: hidden;
+  }
+  .fenzo-service-card {
+    min-width: 200px;
+  }
 }
 
 .service-card__figure {

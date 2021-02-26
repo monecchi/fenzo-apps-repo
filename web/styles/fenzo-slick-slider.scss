@@ -219,18 +219,6 @@
   opacity: 0.34;
 }
 
-.slick-list {
-  -webkit-border-radius: .35rem;
-  border-radius: .35rem;
-}
-
-.slick-slider,
-.slick-track,
-.slick-list,
-.slick-track {
-  display: flex !important;
-}
-
 .fit-cover {
   object-fit: cover;
 }
@@ -245,6 +233,7 @@
 .slick-track {
   display: flex !important;
   width: 100%;
+  border-radius: 0.35rem;
 }
 
 @-webkit-keyframes fadeInUpSD {
@@ -353,11 +342,6 @@
   height: 100%;
   background-color: #3340FF;
   opacity: 0.3;
-}
-
-.slick-list {
-  -webkit-border-radius: .35rem;
-  border-radius: .35rem;
 }
 
 .slick-slider,
@@ -506,6 +490,12 @@
   z-index: 100;
 }
 
+.fenzo_slider.bg_cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 50%;
+}
+
 .fenzo_slider__content .info-heading,
 .fenzo_slider__content .btn {
   user-select: none;
@@ -522,13 +512,6 @@
 
 .fenzo_slider__title {
   max-width: 70%;
-}
-
-.fenzo_slider.bg_cover {
-  background-image: url("http://localhost:3000/portoes-aluminio-hero-default.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0 50%;
 }
 
 .fenzo_slider.bg_cover .fenzo_slider__content .info-heading {
@@ -582,7 +565,7 @@
     justify-self: flex-end;
     align-self: flex-end;
     margin-left: auto;
-    bottom: 35px;
+    bottom: 60px;
     right: 25px;
   }
 
@@ -611,6 +594,7 @@
     width: 300px !important;
     max-height: 150px !important;
     min-height: 150px;
+    border-radius: 0.25rem;
   }
 
   .service__slide {
@@ -657,8 +641,11 @@
     height: 150px !important;
   }
 
-  .slick-list {
-    border-radius: 0 !important;
+  .slick-slider,
+  .slick-track,
+  .slick-list,
+  .slick-track {
+    border-radius: 0.25rem;
   }
 }
 

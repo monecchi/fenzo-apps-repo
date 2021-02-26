@@ -37,7 +37,7 @@ export const projects = [
     url: '',
     cssClass: '',
     color: '#F3EEFF',
-    search_keys: "vidro vidros temperado"
+    search_keys: "vidro vidros temperado janela"
   },
   {
     id: 3,
@@ -55,7 +55,7 @@ export const projects = [
     url: '',
     cssClass: '',
     color: '#FFF1F0',
-    search_keys: "escada corrimão corrimao grade"
+    search_keys: "escada corrimão corrimao grade vidro"
   },
   {
     id: 4,
@@ -73,7 +73,7 @@ export const projects = [
     url: '',
     cssClass: '',
     color: '#F5F8FF',
-    search_keys: "telhado cobertura vidro"
+    search_keys: "telhado pergolado cobertura vidro"
   },
   {
     id: 5,
@@ -91,7 +91,7 @@ export const projects = [
     url: '',
     cssClass: '',
     color: '#E3EDFF',
-    search_keys: "serra serralheiro aluminio alumínio"
+    search_keys: "serra serralheiro serralheria aluminio alumínio"
   },
   {
     id: 6,
@@ -109,7 +109,7 @@ export const projects = [
     url: '',
     cssClass: '',
     color: '#E3EDFF',
-    search_keys: "automático automatização auto"
+    search_keys: "automático automatização auto controle"
   },
 ];
 

@@ -2,12 +2,20 @@
 // Theme variables
 //
 
-import { extendTheme } from "@chakra-ui/react"
-import { mode } from "@chakra-ui/theme-tools"
+import { extendTheme } from '@chakra-ui/react'
+import { mode, createBreakpoints } from "@chakra-ui/theme-tools"
+
+const breakpoints = createBreakpoints({
+  sm: "320px",
+  md: "768px",
+  lg: "992px",
+  xl: "1200px",
+  "2xl": "96em",
+})
 
 const config = {
   initialColorMode: "light",
-  useSystemColorMode: false,
+  useSystemColorMode: false
 }
 
 const fonts = {
@@ -16,12 +24,12 @@ const fonts = {
 }
 
 const styles = {
-  global: {
+  global: (props) => ({
     // styles for the `body`
     body: {
-      bg: "gray.100",
-      color: "black",
-      fontSize: "1rem",
+      bg: mode("white", "gray.900")(props),
+      color: mode("gray.700", "whiteAlpha.900")(props),
+      fontSize: "1rem"
     },
     // styles for the `a`
     a: {
@@ -36,7 +44,7 @@ const styles = {
       fontSize: "1.875rem",
       letterSpacing: ".035rem",
     },
-  },
+  }),
 }
 
 const colors = {
@@ -68,10 +76,12 @@ const colors = {
   brand: {
     blue: '#0033FF',
     dark_blue: '#201E78',
+    black: "#242939",
     dark: '#37384e',
     customGray: '#4a4b65',
     gray: '#737491',
     light_gray: '#F8F8FB',
+    smooth_gray: '#F6F9FD',
     gray_dark: '#4a4b65',
     gray_text: '#37384e'
 
@@ -116,6 +126,15 @@ const components = {
       }
     },
   },
+  Switch: {
+    baseStyle: {
+      track: {
+        _focus: {
+          boxShadow: "none"
+        }
+      }
+    }
+  }
 }
 
 const zIndices = {
@@ -131,7 +150,7 @@ const zIndices = {
   popover: 1500,
   skipLink: 1600,
   toast: 1700,
-  tooltip: 1800,
+  tooltip: 9999, // 1800 default
 }
 
 const shadows = {
@@ -153,10 +172,11 @@ const customTheme = extendTheme({
   colors,
   styles,
   zIndices,
-  components
+  components,
+  breakpoints
 })
 
-export default customTheme
+export default customTheme;
 
 //import { theme } from "@chakra-ui/react";
 

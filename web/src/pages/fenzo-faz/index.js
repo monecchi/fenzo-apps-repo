@@ -43,7 +43,7 @@ const About = ({ tools }) => {
     <BaseLayout hasNavbar={true}>
       <BaseContainer>
         <VStack spacing={8}>
-          <Section>
+          <Section mt="54px">
             <VStack align="start">
               <Heading as="h1" color="brand.gray_dark">A Fenzo</Heading>
               <Text color="gray.700">
@@ -108,7 +108,7 @@ const About = ({ tools }) => {
               </Wrap>
             </VStack>
           </Section>
-          <Section>
+          <Section mb="54px">
             <VStack align="stretch" spacing={4}>
               <Heading as="h2"><SmileyMeh /></Heading>
               <Wrap>
@@ -126,7 +126,7 @@ const About = ({ tools }) => {
   );
 };
 
-export async function getServerStaticProps(context) {
+export async function getStaticProps() {
   const res = await axios.get(
     process.env.API_URL + '/api/v1'
   )

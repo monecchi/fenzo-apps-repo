@@ -1,7 +1,7 @@
-import React from "react"
-//import { Link } from "react-router-dom"
+import React from 'react'
+//import { Link } from 'react-router-dom'
 import Link from 'next/link'
-import PropTypes from "prop-types"
+import PropTypes from 'prop-types'
 import {
   Box,
   Button,
@@ -10,7 +10,10 @@ import {
   Heading,
   Stack,
   Text,
-} from "@chakra-ui/react"
+  useColorModeValue
+} from '@chakra-ui/react'
+
+import { ButtonPrimary } from '../Buttons'
 
 export default function Hero({
   title,
@@ -18,6 +21,7 @@ export default function Hero({
   image,
   ctaLink,
   ctaText,
+  helperText,
   ...rest
 }) {
   return (
@@ -43,7 +47,7 @@ export default function Hero({
           as="h1"
           size="xl"
           fontWeight="700"
-          color="primary.800"
+          color={useColorModeValue("primary.800", "white")} //"primary.800"
           textAlign={["center", "center", "left", "left"]}
           mt={{ base: 2, sm: 2, md: 0, lg: 0 }}
           mb={{ base: 2, sm: 0, md: 0, lg: 0 }}
@@ -53,7 +57,7 @@ export default function Hero({
         <Heading
           as="h2"
           size="md"
-          color="primary.800"
+          color={useColorModeValue("primary.800", "blue.50")}
           opacity="0.8"
           fontWeight="400"
 
@@ -63,7 +67,7 @@ export default function Hero({
           {subtitle}
         </Heading>
         <Link href={ctaLink}>
-          <Button
+          <ButtonPrimary
             colorScheme="primary"
             borderRadius="base" // none, sm, base, md, lg, xl, "2xl": "1rem", "3xl": "1.5rem",  full: "9999px",
             py={5}
@@ -74,20 +78,20 @@ export default function Hero({
             variant="solid"
           >
             {ctaText}
-          </Button>
+          </ButtonPrimary>
         </Link>
         <Text
           fontSize="xs"
           mt={2}
           textAlign="center"
-          color="primary.800"
+          color={useColorModeValue("primary.800", "primary.100")}
           opacity="0.6"
         >
-          Solicite o seu orçamento.
+          {helperText}
         </Text>
       </Stack>
       <Box w={{ base: "100%", sm: "100%", md: "50%", lg: "50%" }} mb={{ base: 0, md: 0 }}>
-        <Image src={image} size="100%" rounded="0.35rem" shadow="xl" mb={{ base: 5, sm: 2, md: 0 }}/>
+        <Image src={image} size="100%" rounded="0.35rem" shadow="xl" mb={{ base: 5, sm: 2, md: 0 }} />
       </Box>
     </Flex>
   )

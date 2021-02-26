@@ -1,12 +1,19 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
+//import theme from '../../../styles/theme'
 
-// ${props => props.theme.colors.brand}
+//const accentColor = `${theme.colors.brand.blue}`;
+// ${accentColor};
+
+//
+// styled-components NavbarResponsive Component (dekstop navbar)
+//
 
 export const NavbarResponsive = styled.header.attrs((...props) => ({
 }))`
   .responsive-header__logo {
     svg {
-      width: auto;
+      width: 164px;
+      height: 55px;
       max-height: 55px;
     }
   }

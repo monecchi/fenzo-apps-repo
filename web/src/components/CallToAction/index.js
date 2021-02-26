@@ -45,7 +45,7 @@ export const CTA = ({
         borderRadius="md"
       >
         <Box bg="brand.gray" borderRadius="full" w="96px" h="96px" minW="96px">
-          <Img src={image} alt={title} shadow="xl" mr={{ base: 2, sm: 2, md: 2 }} mb={{ sm: 2 }} borderRadius="full" boxSize="96px" width="96px" height="96px" />
+          <Img src={image} alt={title} shadow="xl" mr={{ base: 2, sm: 2, md: 2 }} mb={{ sm: 2 }} borderRadius="full" boxSize="96px" width="96px" height="96px" userSelect="none" />
         </Box>
         <Heading
           as="h1"
