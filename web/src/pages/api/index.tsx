@@ -7,7 +7,7 @@ import { serverURL } from '../../constants'
 //
 //
 export const api = axios.create({
-  baseURL: serverURL()
+  baseURL: serverURL() // process.env.API_URL
 })
 
 //
