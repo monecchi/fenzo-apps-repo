@@ -1,13 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
-import { serverURL } from '../../constants'
 
 //
 // API axios Instance
 //
 //
 export const api = axios.create({
-  baseURL: serverURL() // process.env.API_URL
+  baseURL: process.env.API_URL
 })
 
 //
