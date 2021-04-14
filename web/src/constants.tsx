@@ -7,6 +7,18 @@ export const socials: { name: string, description: string, link: string, icon: R
   { name: "Google", description: "Encontre no Google", icon: <GoogleLogo color="blue" size={36} weight="bold" />, link: "https://g.page/fenzoFaz" },
 ];
 
+//
+// Custom loader for prismic.io images
+//
 export const nextPrismicLoader = ({ src, width, quality }) => {
   return `${src}&w=${width}&q=${quality || 75}`
+}
+
+/**
+ * Returns correct site url based on environment, development or production
+ * @returns string url, example: `http://localhost:3000` || `https://mywebsite.com`
+ */
+export const serverURL = () => {
+  const url = process.env.NODE_ENV !== 'production' ? "http://localhost:3000" : process.env.NEXT_PUBLIC_SITE_URL;
+  return `${url}`;
 }
