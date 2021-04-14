@@ -40,7 +40,7 @@ const About = () => { // ({ tools }
       <title>Sobre a Fenzo</title>
     </Head>
     <Decoration horizontalAlign="left" verticalAlign="top" />
-    <BaseLayout hasNavbar={true}>
+    <BaseLayout>
       <BaseContainer>
         <VStack spacing={8}>
           <Section mt="54px">

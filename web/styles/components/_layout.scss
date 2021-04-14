@@ -1,0 +1,30 @@
+//
+// Fenzo Main Layout Styles
+//
+
+.home-page {
+  margin-top: 0; // 80px
+}
+
+@media only screen and (min-width: 960px) {
+  .home-page {
+    margin: 0;
+  }
+}
+
+.main-layout {
+  height: 100%;
+}
+
+/* .main-layout padding: 0 0 50px*/
+.main-layout {
+  transition: 500ms;
+  overflow: hidden;
+  padding: 0;
+}
+
+@media only screen and (min-width: 960px) {
+  .main-layout {
+    padding: 0;
+  }
+}

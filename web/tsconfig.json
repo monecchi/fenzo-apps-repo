@@ -26,8 +26,10 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-  ],
+    "**/*.tsx",
+    "**/*.jsx",
+    "src/pages/api/search.tsx", "src/pages/api/preview.js", "src/pages/api/exit-preview.js"
+, "src/pages/api/sendnow/index.js", "src/hooks/useOnClickOutside.js", "src/hooks/useOnClickOutside.js"  ],
   "exclude": [
     "node_modules"
   ]

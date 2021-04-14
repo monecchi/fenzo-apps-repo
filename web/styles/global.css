@@ -3278,7 +3278,7 @@
   }
 }
 
-.search-input__field::placeholder {
+.search-input__field::placeholder, .search_input__field::placeholder {
   color: #8492A6;
   margin: 0;
   font-weight: 400;

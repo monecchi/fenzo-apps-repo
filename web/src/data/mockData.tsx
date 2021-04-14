@@ -19,7 +19,8 @@ export const projects = [
     url: '',
     cssClass: '',
     color: '#E3EDFF',
-    search_keys: "portão portao porta portões portoes"
+    new: false,
+    search_keys: "portão portao porta portões portoes garagem basculante pivotante correr automático alumínio aluminio"
   },
   {
     id: 2,
@@ -32,12 +33,13 @@ export const projects = [
     icon_name: 'vidro-temperado',
     icon_color: '#0033FF',
     hasImage: true,
-    img_url: '/portoes-aluminio-hero.png',
+    img_url: '/images/casa-sala-portas-aluminio-guarda-corpo.jpg',
     hasButton: true,
     url: '',
     cssClass: '',
     color: '#F3EEFF',
-    search_keys: "vidro vidros temperado janela"
+    new: false,
+    search_keys: "vidro vidros temperado janela janelas basculante alumínio aluminio"
   },
   {
     id: 3,
@@ -50,12 +52,13 @@ export const projects = [
     icon_name: 'escada-guarda-corpo',
     icon_color: '#EC373C',
     hasImage: true,
-    img_url: '/portoes-aluminio-hero.png',
+    img_url: '/images/guarda-corpo-vidro-residencia-casa.jpg',
     hasButton: true,
     url: '',
     cssClass: '',
     color: '#FFF1F0',
-    search_keys: "escada corrimão corrimao grade vidro"
+    new: false,
+    search_keys: "escada corrimão corrimao grade vidro guarda corpo protetor alumínio aluminio aço inox"
   },
   {
     id: 4,
@@ -73,7 +76,8 @@ export const projects = [
     url: '',
     cssClass: '',
     color: '#F5F8FF',
-    search_keys: "telhado pergolado cobertura vidro"
+    new: true,
+    search_keys: "telhado teto pergolado cobertura vidro temperado alumínio aluminio"
   },
   {
     id: 5,
@@ -91,6 +95,7 @@ export const projects = [
     url: '',
     cssClass: '',
     color: '#E3EDFF',
+    new: false,
     search_keys: "serra serralheiro serralheria aluminio alumínio"
   },
   {
@@ -109,7 +114,8 @@ export const projects = [
     url: '',
     cssClass: '',
     color: '#E3EDFF',
-    search_keys: "automático automatização auto controle"
+    new: true,
+    search_keys: "automático automatização auto controle portao portão portões portoes"
   },
 ];
 

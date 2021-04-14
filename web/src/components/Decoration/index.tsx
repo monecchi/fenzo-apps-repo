@@ -1,6 +1,6 @@
-import { ReactElement } from 'react'
+import React, { ReactElement } from 'react'
 import { Box, BoxProps } from '@chakra-ui/react'
-import FallbackSVG from '../../assets/illustrations/decoration_1.svg'
+import FallbackSvg from '../../assets/illustrations/decoration_1.svg'
 
 const decorationOffsetX = 191;
 const decorationOffsetY = 80;
@@ -32,7 +32,7 @@ function Decoration(props: {
         zIndex={1}
         {...properties}
       >
-        <FallbackSVG />
+        {<FallbackSvg />}
       </Box>
     </>
   );

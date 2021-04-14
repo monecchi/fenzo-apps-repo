@@ -1,0 +1,44 @@
+{
+  "Monday": [
+    {
+      "from": "09:00",
+      "to": "18:00"
+    },
+    {
+      "from": "18:00",
+      "to": "22:00"
+    }
+  ],
+  "Tuesday": [
+    {
+      "from": "09:00",
+      "to": "18:00"
+    }
+  ],
+  "Wednesday": [
+    {
+      "from": "09:00",
+      "to": "18:00"
+    }
+  ],
+  "Thursday": [
+    {
+      "from": "09:00",
+      "to": "18:00"
+    }
+  ],
+  "Friday": [
+    {
+      "from": "09:00",
+      "to": "18:00"
+    }
+  ],
+  "Saturday": [
+    {
+      "from": "09:00",
+      "to": "16:00"
+    }
+  ],
+  "Sunday": "closed",
+  "timeZone": "America/Sao_Paulo"
+}

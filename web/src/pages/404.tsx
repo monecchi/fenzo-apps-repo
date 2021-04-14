@@ -4,8 +4,10 @@ import { NextSeo } from "next-seo";
 import Link from 'next/link'
 import BaseLayout from '../components/Layouts/BaseLayout'
 import BaseContainer from '../components/Layouts/BaseContainer'
-import { Flex, Box, Center, VStack, Heading, Text, Button } from "@chakra-ui/react"
+import { Flex, Center, VStack, Heading, Text, Icon as ChakraIcon } from "@chakra-ui/react"
+import { ButtonSoftPrimary } from '../components/Buttons'
 import Icon from '../components/Icon'
+import { ArrowLeft } from 'phosphor-react'
 //import SawIconAnimation from '../assets/icons/saw-icon-animation.svg'
 
 const SawAnimatedIcon = () => {
@@ -71,34 +73,26 @@ const Page404: React.FC = () => {
           title: "404 – Página não encontrada - Fenzo Serralheria",
         }}
       />
-      <BaseLayout hasNavbar={true}>
+      <BaseLayout>
         <BaseContainer>
-            <Center minH={"calc(100vh - 80px)"} justifyContent="center" alignItems="center">
-              <VStack>
-                <SawAnimatedIcon />
-                <Flex mt="1rem" direction="column" justifyContent="center" alignItems="center">
-                  <Heading mt="1.8rem" fontSize={{ base: "1rem", md: "32px", lg: "32px" }}>Ops, página não encontrada</Heading>
-                  <Text align="center" mb="1.8rem">Esse conteúdo não existe mais!</Text>
-                  <Link href="/">
-                    <Button
-                      leftIcon={<Icon icon="arrow-left" size={18} color="blue" />}
-                      colorScheme="blue"
-                      size="lg"
-                      variant="ghost"
-                      borderRadius="4px"
-                      transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
-                      bg="blue.50"
-                      _hover={{ bg: "blue.500", color: "blue" }}
-                      _focus={{
-                        boxShadow: "none",
-                      }}
-                    >
-                      voltar
-                </Button>
-                  </Link>
-                </Flex>
-              </VStack>
-            </Center>
+          <Center minH={"calc(100vh - 80px)"} justifyContent="center" alignItems="center">
+            <VStack>
+              <SawAnimatedIcon />
+              <Flex mt="1rem" direction="column" justifyContent="center" alignItems="center">
+                <Heading mt="1.8rem" fontSize={{ base: "1rem", md: "32px", lg: "32px" }}>Ops, página não encontrada</Heading>
+                <Text align="center" mb="1.8rem">Esse conteúdo não existe mais!</Text>
+                <Link href="/">
+                  <ButtonSoftPrimary
+                    leftIcon={<ArrowLeft size={"1.2rem"} weight="bold" />}
+                    size="lg"
+                    transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
+                  >
+                    voltar
+                </ButtonSoftPrimary>
+                </Link>
+              </Flex>
+            </VStack>
+          </Center>
 
         </BaseContainer>
       </BaseLayout>

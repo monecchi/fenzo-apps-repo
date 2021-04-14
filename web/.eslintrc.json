@@ -23,12 +23,16 @@
   },
   "plugins": [
     "react",
+    "react-hooks",
     "@typescript-eslint",
+    "eslint-plugin-react-hooks",
     "prettier"
   ],
   "rules": {
     "prettier/prettier": "error",
     "space-before-function-paren": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }

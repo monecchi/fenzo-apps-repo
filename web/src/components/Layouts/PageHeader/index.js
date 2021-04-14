@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Box, Flex } from '@chakra-ui/react'
 
   //   width: 100%;
@@ -11,6 +11,15 @@ import { Box, Flex } from '@chakra-ui/react'
 
 export const PageHeaderDefault = (props) => {
   const { cssClass } = props
+
+  const [docTitle, setDocTitle] = useState('')
+
+  useEffect(() => {
+    setDocTitle(document.title.toString().toLocaleLowerCase().replace(/\+/g, ''))
+  }, [])
+
+  //console.log(docTitle)
+
   return (
     <Flex
       w="100%"
@@ -20,7 +29,7 @@ export const PageHeaderDefault = (props) => {
       align="center" // alignItems
       //justify={{ base: "space-between", sm: "center", md: "center", lg: "space-between" }} // justifyContent
       p={{ base: "80px 20px 60px 20px", sm: "60px 20px 60px 20px", md: "80px 20px 60px 20px", lg: "60px 20px 80px 20px" }}
-      className={cssClass ? "page-header__container " + title.toLowercase() + "__container" : "page-header__container"}
+      className={cssClass ? "page-header__container " + docTitle.toLowercase() + "__container" : "page-header__container"}
       {...props}
     >
       {props.children}

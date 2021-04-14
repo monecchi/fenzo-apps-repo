@@ -1,47 +1,44 @@
 import Head from 'next/head'
-import React, { useState, useEffect } from 'react'
-//import { useMediaQuery } from 'beautiful-react-hooks'
 import { AppProps } from 'next/app'
-import { Box, ChakraProvider, useColorModeValue } from '@chakra-ui/react' // import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import React, { useState, useCallback, useEffect } from 'react'
+import useDeviceDetect from '../hooks/useDeviceDetect'
+import {
+  Box,
+  ChakraProvider
+} from '@chakra-ui/react'
+//import { useMediaQuery } from '@chakra-ui/react'
+
 // https://github.com/wirtzdan/website
 import customTheme from '../../styles/theme'
-import FontFace from '../../styles/font-face'
+//import FontFace from '../../styles/font-face'
+import { Fonts } from '../../styles/Fonts'
 import { DefaultSeo } from 'next-seo'
 import SEO from '../../next-seo.config'
 import RouteChangeIndicator from '../components/RouteChangeIndicator'
 import Nprogress from '../components/RouteChangeIndicator/Progress' //ngprogress on router change
-import Navbar from '../components/Navbar/Navbar'
-//import NavbarDesktop from '../components/Navbar/NavBarDesktop'
+import NavbarMain from '../components/Navbar/NavbarMain'
 import NavbarMobile from '../components/Navbar/NavbarMobile'
-//import SlickThemeCustomStyles from '../components/Slider/styles/slick-theme-custom' // jsx styles overrides custom slick-theme.css
-//import FenzoSlickSlider from '../components/Slider/styles/fenzo-slick-slider' // jsx styles overrides custom slick-theme.css
-
-//import { Global } from "@emotion/react"
-
-// styled-components global theme imports (not being used in favor of chakra-ui)
-//import { ThemeProvider } from 'styled-components' // styled-components theme provider
-//import themealt from '../../styles/theme'
+import FenzoAnnouncer from '../components/Announcer'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import TopScrollButton from '../components/ScrollTop'
 
 import '../../styles/global.scss' // global.css styles
-
-//import GlobalStyle from '../../styles/global' // Custom global reset
-//<GlobalStyle />
 
 //{isLargerThan1280 ? "larger than 1280px" : "smaller than 1280px"}
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
 
-  //const isMobile = useMediaQuery('(min-width: 1280px)'); // beautifull react hooks not working with ssr
+  //let AOS;
 
+  const { isMobile } = useDeviceDetect()
   //const [isLargerThan1280] = useMediaQuery('(min-width: 1280px)');
 
-  const [isOpenNavBar, setOpenNavBar] = useState(true);
-  const [isOpenHero, setOpenHero] = useState(true);
   const [windowHeight, setWindowHeight] = useState(null);
 
-  const updateWindowHeight = () => {
+  const updateWindowHeight = useCallback(() => {
     setWindowHeight(window.innerHeight - 1);
-  }
+  }, [setWindowHeight])
 
   useEffect(() => {
     document.querySelector("body").classList.add("scroll-smooth");
@@ -50,6 +47,24 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
     return () => window.removeEventListener('resize', updateWindowHeight);
   }, []);
 
+  useEffect(() => {
+    /**
+     * Server-side rendering does not provide the 'document' object
+     * therefore this import is required either in useEffect or componentDidMount as they
+     * are exclusively executed on a client
+     */
+    //const AOS = require("aos");
+    AOS.init({
+      once: true,
+      easing: 'ease-out-quad', // default 'ease'
+    });
+  }, []);
+
+  useEffect(() => {
+    if (AOS) {
+      AOS.refresh();
+    }
+  });
 
   return (
     <div>
@@ -67,15 +82,22 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           <meta name="msapplication-TileColor" content="#3300ff" />
           <meta name="theme-color" content="#3300ff" />
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-          <link rel="preconnect" href="https://use.typekit.net" />
+          <link rel="preconnect" href="https://use.typekit.net/ynp2nrv.css" />
         </Head>
+        <Fonts />
         <DefaultSeo {...SEO} />
-        <Navbar />
-        <Component {...pageProps} />
+        <FenzoAnnouncer message="Nova linha kit portões de alumínio. Confira" url="/" />
+        {!isMobile ? (<NavbarMain />) : (<></>)}
+        {isMobile && (<NavbarMobile isOpen={true} />)}
+        {/* <Navbar /> */}
+        <Box as="main" className="main-layout">
+          <Component {...pageProps} />
+        </Box>
       </ChakraProvider>
       <Nprogress />
       <RouteChangeIndicator />
-      <FontFace />
+      {/* <FontFace /> */}
+      <TopScrollButton />
     </div>
   )
 

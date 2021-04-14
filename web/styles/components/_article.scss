@@ -1,0 +1,67 @@
+//
+//
+// articles.scss
+//
+//
+
+.article{
+  p.lead{
+    &:first-child{
+      margin-top: $spacer*3;
+      margin-bottom: $spacer*2;
+    }
+  }
+  p + h4{
+    margin-top: $spacer*2;
+  }
+  p{
+    &:not(:last-child){
+      margin-bottom: $spacer;
+    }
+  }
+  blockquote{
+    margin: $spacer*2 0;
+  }
+  p + h5{
+    margin-top: $spacer*1.5;
+  }
+  ul{
+    padding-left: $spacer;
+    > li{
+      margin-bottom: $spacer/2;
+    }
+  }
+}
+
+article{
+  ol{
+    > li{
+      &:not(:last-child){
+        margin-bottom: $spacer*2;
+      }
+    }
+  }
+}
+
+figure{
+  text-align: center;
+  margin: $spacer*2 0;
+}
+
+figcaption{
+  margin-top: $spacer/2;
+  font-size: 1rem * .875;
+  font-weight: "600";
+  color: "#515478";
+}
+
+blockquote{
+  position: relative;
+  border-radius: $border-radius*2;
+  padding: $spacer*2;
+  .btn{
+    position: absolute;
+    bottom: $spacer/2;
+    right: $spacer/2;
+  }
+}

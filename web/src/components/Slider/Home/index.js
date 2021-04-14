@@ -1,19 +1,15 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
+import React from 'react'
+import Slider from 'react-slick'
+import FlexContainer from '../../../components/Layouts/FlexContainer'
+import { Box } from '@chakra-ui/react'
 
-// Slick Carousel Default Styles
-//import "slick-carousel/slick/slick.css";
-//import "slick-carousel/slick/slick-theme.css";
+// Slider next / prev Buttons
+import { SliderNextButton, SliderPrevButton } from '../NavButtons/SliderButtons'
 
-// Custom slick-theme.css
-//import '../slick-theme.css';
-//import SlickThemeCustomStyles from '../styles/slick-theme-custom' // jsx styles overrides custom slick-theme.css
-//import styles from '../slick-theme.module.css'
-
-import { SliderNextButton, SliderPrevButton } from '../NavButtons/SliderButtons';
-
+//
 // Slider Content Component
-import SliderHomeContent from '../SliderContent';
+//
+import SliderHomeContent from '../SliderContent'
 
 const settings = {
   dots: true,
@@ -40,72 +36,67 @@ const settings = {
 //
 // Home Slider
 // style={{backgroundImage: `url(${"https://falcon.technext.it/static/media/1-2.ee9d7fdf.jpg"})`}}  <h1 style={{color: "#fff"}}>Portões de Alumínio</h1>
+//
 
+//
+// Home Slider Component
 //
 const HomeSlider = () => {
   return (
-    <React.Fragment>
-      <div className="home_slider flex-container">
+    <>
+      <FlexContainer
+        flexGrow="1"
+        justifyContent="flex-start"
+        alignItems="center"
+        w="100%"
+        maxW="1366px"
+        m={{ base: "2.5rem auto 0 auto", sm: "1.25rem auto 0 auto", md: "1.85rem auto 0 auto", lg: "2.5rem auto 0 auto" }}
+        className="home_slider flex-container"
+      >
         <Slider {...settings} className="fenzo_home_slider slider-dark">
-          <div className="slider-item">
-            <SliderHomeContent
-              id="portao-aluminio-slide"
-              title="Seu portão elegante e durável"
-              upperTitle="Portões de alumínio"
-              subtitle="A Fenzo faz ®"
-              image="/portoes-aluminio-hero-default.png"
-              url="/servico/portoes-de-aluminio/"
-              hasButton={true}
-              hasImage={true}
-              cssClass=""
-            />
-          </div>
 
-          <div className="slider-item">
-            <SliderHomeContent
-              id="guarda-corpo-slide"
-              title="Guarda corpo em alumínio e vidro temperado"
-              upperTitle="Guarda Corpo"
-              subtitle="Modernidade e requinte"
-              image="/guarda-corpo-vidro-by-fenzo.png"
-              url="/servico/portoes-de-aluminio/"
-              hasButton={true}
-              hasImage={true}
-              cssClass=""
-            />
-          </div>
+          <SliderHomeContent
+            id="portao-aluminio-slide"
+            title="Seu portão elegante e durável"
+            upperTitle="Portões de alumínio"
+            subtitle="A Fenzo faz ®"
+            image="/portoes-aluminio-hero-default.png"
+            url="/servico/portoes-de-aluminio/"
+            hasButton={true}
+            hasImage={true}
+            cssClass=""
+          />
 
-          <div className="slider-item">
-            <SliderHomeContent
-              id="chamada-slide"
-              title="Guarda corpo em alumínio e vidro temperado"
-              upperTitle="Guarda Corpo"
-              subtitle="Modernidade e requinte"
-              image=""
-              url="/servicos"
-              hasButton={false}
-              hasImage={false}
-              cssClass=""
-            />
-          </div>
+          <SliderHomeContent
+            id="guarda-corpo-slide"
+            title="Guarda corpo em alumínio e vidro temperado"
+            upperTitle="Guarda Corpo"
+            subtitle="Modernidade e requinte"
+            image="/guarda-corpo-vidro-by-fenzo.png"
+            url="/servico/portoes-de-aluminio/"
+            hasButton={true}
+            hasImage={true}
+            cssClass=""
+          />
 
-          <div className="slider-item">
-            <div className="slider-content">
-              <h3>3</h3>
-            </div>
-          </div>
+          <SliderHomeContent
+            id="chamada-slide"
+            title="Guarda corpo em alumínio e vidro temperado"
+            upperTitle="Guarda Corpo"
+            subtitle="Modernidade e requinte"
+            image=""
+            url="/servicos"
+            hasButton={false}
+            hasImage={false}
+            cssClass=""
+          />
 
-          <div className="slider-item">
-            <div className="slider-content">
-              <h3>4</h3>
-            </div>
-          </div>
         </Slider>
-      </div>
+      </FlexContainer>
       <style jsx>{`
 
       `}</style>
-    </React.Fragment>
+    </>
   )
 
 }

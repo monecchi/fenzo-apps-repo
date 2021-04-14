@@ -2,10 +2,10 @@ import { Box, VStack, Text, useColorModeValue } from '@chakra-ui/react'
 
 const MobileMenuButton = ({ label, icon, ...rest }) => {
   return (
-    <Box
+    <VStack
       as="button"
       fontWeight="500"
-      color={useColorModeValue("blue", "blue.100")}
+      color={useColorModeValue("blue.500", "blue.100")}
       display="flex"
       justifyContent="center"
       alignItems="center"
@@ -14,14 +14,18 @@ const MobileMenuButton = ({ label, icon, ...rest }) => {
       height='100%'
       py={4}
       px={2}
-      userSelect="none"
       {...rest}
+      color={useColorModeValue("blue.600", "blue.200")}
     >
       {icon}
-      <Text as="span">
+      <Text
+        fontSize="xs"
+        fontWeight="400"
+        color={useColorModeValue("gray.600", "gray.200")}
+      >
         {label}
       </Text>
-    </Box>
+    </VStack>
   );
 };
 

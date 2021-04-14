@@ -1,14 +1,19 @@
 import React from 'react'
-import { Flex, Box, Grid, GridItem, Text, Heading, useColorModeValue } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
+import FlexContainer from '../../components/Layouts/FlexContainer'
+import { Flex, Box, Grid, GridItem, Text, Heading, useColorModeValue } from '@chakra-ui/react'
 
-const SectionHeading = ({title, subtitle, ...rest}) => {
+
+const SectionHeading = ({title, ...rest}) => {
+  const { subtitle } = rest
   return (
     <>
-      <Flex
+      <FlexContainer
         w="100%"
         maxW="1366px"
-        p={{ base: "20px 0 20px 0" }}
+        m="0 auto"
+        mt={{ base: "3rem", sm: "2.25rem", md: "2.25rem", lg: "3rem" }}
+        mb="0"
         direction="row" // flexDirection
         justify="left" // justifyContent
         align="center" // alignItems
@@ -18,17 +23,17 @@ const SectionHeading = ({title, subtitle, ...rest}) => {
         {title && (
           <Heading
             as="h5"
-            fontSize="1.25rem"
-            color={useColorModeValue("gray.800", "white")}
+            fontSize="1.16rem"
             className="tight-text"
+            mb="0"
           >
             {title}
-            {subtitle && (<Text color={useColorModeValue("gray.500", "whiteAlpha.500")} fontSize="1rem" fontWeight="400" mt="0.35rem" lineHeight="1">{subtitle}</Text>)}
+            {subtitle && (<Text color={useColorModeValue("gray.500", "whiteAlpha.500")} fontSize="1rem" fontWeight="400" mt="0.35rem" lineHeight="1" mb="0">{subtitle}</Text>)}
           </Heading>
         )}
         {rest.children}
       </Box>
-      </Flex>
+      </FlexContainer>
     </>
   )
 };

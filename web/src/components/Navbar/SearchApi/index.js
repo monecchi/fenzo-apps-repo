@@ -1,9 +1,18 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { useServices } from '../../../hooks/useServices'
-import { Skeleton } from '@chakra-ui/react'
+import { Flex, Box, Input, Skeleton, useColorModeValue } from '@chakra-ui/react'
 import Icon from '../../Icon'
+import { MagnifyingGlass as SearchIcon } from 'phosphor-react'
 
-//import style from '../../../../styles/Fenzo.module.css'
+  // display: flex;
+  // height: 50px;
+  // padding-left: 53px;
+  // padding-right: 0;
+  // border: 1px solid #F1F4F8;
+  // line-height: 1.25em;
+  // font-weight: 300;
+  // background: #F8F8FB;
+  // border-radius: 4px;
 
 // https://www.youtube.com/watch?v=vXO5JMiKtM8
 

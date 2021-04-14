@@ -1,9 +1,12 @@
+import type { NextApiRequest, NextApiResponse } from 'next'
 import { projects } from '../../../data/mockData'
+
+// req: NextApiRequest, res: NextApiResponse
 
 //
 // Project route handler, needs to be string, both id and slug
 //
-export default function projectHandler({ query: { slug } }, res) {
+export default function projectHandler({ query: { slug } }, res: NextApiResponse) {
   const filtered = projects.filter((p) => p.slug === slug || p.id == slug)
 
   // User with id exists

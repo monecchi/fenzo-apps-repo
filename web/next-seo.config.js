@@ -12,10 +12,10 @@ const SEO = {
     description,
     images: [
       {
-        url: "/banner-fenzo.png",
+        url: "https://images.prismic.io/fenzo/dd039a12-9f05-4f70-976a-677b59a0dc41_fenzo-serralheria-default.png?auto=compress,format", //"/images/fenzo-serralheria-default.png",
         alt: title,
-        width: 2240,
-        height: 1260,
+        width: 1600,
+        height: 850,
       },
     ],
   },

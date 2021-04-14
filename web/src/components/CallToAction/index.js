@@ -11,8 +11,14 @@ import {
   Heading,
   Stack,
   Text,
+  useColorModeValue
 } from "@chakra-ui/react"
 
+import FlexContainer from '../../components/Layouts/FlexContainer'
+
+//
+// CTA - Call to Action Component
+//
 export const CTA = ({
   title,
   content,
@@ -22,7 +28,7 @@ export const CTA = ({
   ...rest
 }) => {
   return (
-    <Flex
+    <FlexContainer
       align="center"
       justify={{ base: "space-around", md: "space-around", xl: "space-between" }}
       direction={{ base: "column", sm: "column", md: "column", lg: "row" }}
@@ -30,9 +36,9 @@ export const CTA = ({
       maxW="1366px"
       minH="112px"
       m="0 auto"
-      px={5}
-      mt={{ base: 8, sm: 8, md: 8, lg: 0 }}
-      mb={{ base: 8, sm: 8, md: 8, lg: 0 }}
+      mt={{ base: "2rem", sm: 8, md: 8, lg: "3rem" }}
+      mb="0"
+      className="cta-simple"
       {...rest}
     >
       <Stack
@@ -40,7 +46,7 @@ export const CTA = ({
         align={["center", "center", "center", "center"]}
         direction={{ base: "column", sm: "column", md: "row", lg: "row" }}
         w="100%"
-        bg={"#F6F9FD"}
+        bg={useColorModeValue("#F6F9FD", "fenzodark.600")}
         padding="1rem 2rem"
         borderRadius="md"
       >
@@ -51,7 +57,7 @@ export const CTA = ({
           as="h1"
           size="md"
           fontWeight="700"
-          color="primary.800"
+          color={useColorModeValue("blue.800", "white")}
           textAlign={["center", "center", "center", "left"]}
           mt={{ base: 2, sm: 2, md: 0, lg: 0 }}
           mb={{ base: 2, sm: 0, md: 0, lg: 0 }}
@@ -60,26 +66,25 @@ export const CTA = ({
           {title}
         </Heading>
         <Text
-          size="18px"
-          color="primary.800"
-          opacity="0.8"
+          color={useColorModeValue("blue.800", "gray.200")}
+          fontSize="md"
           fontWeight="400"
           textAlign={["center", "center", "justify", "justify"]}
+          opacity="0.8"
           mt={{ base: 2, sm: 2, md: 0, lg: 0 }}
           mx="1rem"
-          maxW="65%"
-          noOfLines={[1, 2, 3]}
+          maxW={{ base: "65%", sm: "100%", md: "60%", lg: "65%" }}
+          noOfLines={{ base: 3, sm: 2, md: 2, lg: 3 }}
         >
           {content}
         </Text>
         <Link href={ctaLink}>
           <Button
-            colorScheme="primary"
+            colorScheme="blue"
             borderRadius="base" // none, sm, base, md, lg, xl, "2xl": "1rem", "3xl": "1.5rem",  full: "9999px",
             py={5}
             px={4}
             mt={4}
-            lineHeight="1"
             size="md"
             width="auto"
             variant="link"
@@ -88,7 +93,7 @@ export const CTA = ({
           </Button>
         </Link>
       </Stack>
-    </Flex>
+    </FlexContainer>
   )
 }
 

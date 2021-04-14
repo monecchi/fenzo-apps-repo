@@ -1,229 +1,273 @@
-import React, { Component, useState } from "react";
-import PropTypes from "prop-types";
+import React, { useCallback, useRef, useState, useEffect } from 'react'
+import Link from 'next/link'
+//import { useServices } from '../../../hooks/useServices'
+//import { projects } from '../../../data/mockData'
+import {
+  Flex,
+  Box,
+  Button,
+  IconButton,
+  Text,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  InputRightElement,
+  List,
+  ListItem,
+  Skeleton,
+  useColorMode,
+  useColorModeValue
+} from '@chakra-ui/react'
+//import useOnClickOutside from '../../../hooks/useOnClickOutside'
+import Icon from '../../Icon'
+import { MagnifyingGlass as SearchIcon, XCircle } from 'phosphor-react'
 
-//
-// Navbar Search Component
-//
+// https://www.youtube.com/watch?v=vXO5JMiKtM8
 
-const NavbarSearch = (props) => {
+// http://localhost:3000/api/services/
 
-    const savedSuggestions = [];
-    const { suggestions } = props;
 
-    const [query, setSearchQuery] = useState('');
-    const [searchlist, setSearchList] = useState(suggestions);
+const NavbarSearch = () => {
 
-    const [searchState, setSearchState] = useState({
-        // The active selection's index
-        activeSuggestion: 0,
-        // The suggestions that match the user's input
-        filteredSuggestions: [],
-        // Whether or not the suggestion list is shown
-        showSuggestions: false,
-        // What the user has entered
-        userInput: ""
-    });
+  //const { services, isLoading, isError } = useServices();
 
-    // Event fired when the input value is changed
-    const handleInputChange = e => {
-        const userInput = e.currentTarget.value;
+  //const services = projects;
 
-        // Filter our suggestions that don't contain the user's input
-        const filteredSuggestions = suggestions.filter(suggestion =>
-            suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
-        );
+  //console.log(services)
 
-        // Update the user input and filtered suggestions, reset the active
-        // suggestion and make sure the suggestions are shown
-        setSearchState({
-            activeSuggestion: 0,
-            filteredSuggestions,
-            showSuggestions: true,
-            userInput: e.currentTarget.value
-        });
-    };
+  const wrapperRef = useRef(null);
 
-    // delete later?
-    const handleSearchClear = () => {
-        setSearchQuery("");
+  const [searchTerm, setSearchTerm] = useState('');
+  const [display, setDisplay] = useState(false);
+  const [searchResults, setSearchResults] = useState([]);
+
+  const searchEndpoint = (query) => `/api/search?q=${query}`
+
+  const { colorMode } = useColorMode()
+  const inputBorderColor = useColorModeValue("gray.200", "fenzodark.600")
+  const inputBorderColorHover = useColorModeValue("gray.300", "fenzodark.700")
+  const resultItemColor = useColorModeValue("gray.800", "gray.200")
+
+  // useEffect(() => {
+  //   const results = services && services.filter(service =>
+  //     service.title.toLowerCase().includes(searchTerm.toLowerCase()) || service.search_keys.toLowerCase().includes(searchTerm.toLowerCase())
+  //   );
+  //   setSearchResults(results);
+  // }, [searchTerm]);
+
+  // useOnClickOutside(wrapperRef, () => {
+  //   setDisplay(false)
+  // });
+
+  // Update Text Input onChange
+  // const handleChange = event => {
+  //   setSearchTerm(event.target.value);
+  // };
+
+  const onChange = useCallback((event) => {
+    const query = event.target.value;
+    setSearchTerm(query.toLowerCase())
+    if (query && query.length >= 3) {
+      fetch(searchEndpoint(query))
+        .then(res => res.json())
+        .then(res => {
+          setSearchResults(res.results)
+        })
+    } else {
+      setSearchResults([])
     }
+  }, [setSearchResults])
 
-    const handleOnFocusInput = () => {
-        setSearchState({
-            showSuggestions: true
-        });
-        setSearchList(JSON.parse(localStorage.getItem("searchSuggestions")));
+  // const onOpen = useCallback(() => {
+  //   setDisplay(true)
+  // }, [setDisplay])
+
+  const onFocus = useCallback(() => {
+    setDisplay(true)
+    window.addEventListener('click', onClick)
+  }, [setDisplay])
+
+  const onClick = useCallback((e) => {
+    if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
+      setDisplay(false)
+      window.removeEventListener('click', onClick)
     }
+  }, [wrapperRef, setDisplay])
 
-    const handleOnBlurInput = () => {
-        setSearchState({
-            showSuggestions: false
-        });
-    }
+  // const onClose = useCallback(() => {
+  //   setDisplay(false)
+  // }, [setDisplay])
 
-    // Update suggestions list on form submit
-    const handleSubmit = event => {
-        if (query) {
-            setSearchList(searchlist.concat(query));
-            savedSuggestions.push( localStorage.setItem("searchSuggestions", JSON.stringify(searchlist.concat(query)) ));
-        }
+  // const onTextInputChange = useCallback(
+  //   (event) => {
+  //     setSearchTerm(event.target.value)
+  //   },
+  //   [setSearchTerm],
+  // )
 
-        setSearchQuery('');
+  // Update search field when clicking a search result
+  // const updateSearchInput = servico => {
+  //   setSearchTerm(servico.toLowerCase());
+  //   setDisplay(false);
+  // };
 
-        event.preventDefault();
-    };
+  const updateSearchInput = useCallback((value) => {
+    setSearchTerm(value.toLowerCase())
+    setDisplay(false)
+  }, [setSearchTerm, setDisplay])
 
-    const { showSuggestions } = searchState;
+  const clearSearchInput = useCallback(() => {
+    setSearchTerm('')
+    setDisplay(false)
+  }, [setSearchTerm, setDisplay])
 
+  if (!searchResults) {
     return (
-        <div className="search-input">
-            <form className="search-input__form" onSubmit={handleSubmit}>
-                <div className="search-input__field-wrapper">
-                    <span className="icon-marmita icon-marmita--search search-input__icon-search">
-                        <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <g fill="#3F3E3E" fillRule="evenodd">
-                                <path
-                                    d="M22 37c8.284 0 15-6.716 15-15 0-8.284-6.716-15-15-15-8.284 0-15 6.716-15 15 0 8.284 6.716 15 15 15zm0 3c-9.941 0-18-8.059-18-18S12.059 4 22 4s18 8.059 18 18-8.059 18-18 18z"
-                                    fillRule="nonzero" />
-                                <rect transform="rotate(-45 37.793 38.293)" x="36.293" y="32.293" width="3" height="12" rx="1.5" />
-                            </g>
-                        </svg>
-                    </span>
+      <>
+        <Flex
+          position="relative"
+          w="100%"
+          minW="370px"
+          maxW="450px"
+          p="0 20px 0 20px"
+          justifyContent="center"
+          alignItems="center"
+          className="search_input__loading"
+          ref={wrapperRef}
+        >
+          <Skeleton
+            w="100%"
+            h="50px"
+            maxW="450px"
+            minW="370px"
+            borderRadius="4px"
+            borderColor={colorMode === "light" ? "gray.200" : "brand.bluedark"}
+            startColor={colorMode === "light" ? "#f8f8fb" : "#262642"}
+            endColor={colorMode === "light" ? "#f1f1f9" : "brand.bluedark"}
+            className="search_input"
+          />
+        </Flex>
+      </>
+    )
+  }
 
-                    <input
-                        id="search-all"
-                        tabIndex={0}
-                        role="search"
-                        type="text"
-                        name="q"
-                        autoComplete="off"
-                        aria-label="Buscar prato ou ingrediente"
-                        className="search-input__field"
-                        placeholder="Busque por item ou loja"
-                        onFocus={ () => handleOnFocusInput() }
-                        onChange={e => setSearchQuery(e.target.value)}
-                        onBlur={ () => handleOnBlurInput() }
-                        value={query}
-                    />
+  return (
+    <Flex
+      position="relative"
+      w="100%"
+      minW="370px"
+      maxW="450px"
+      p="0 20px 0 20px"
+      justifyContent="center"
+      alignItems="center"
+      className="search_input__wrapper"
+      ref={wrapperRef}
+    >
+      <Box as="form" w="100%" h="100%" className="search_input__form">
+        <Box display="flex" flexDirection="row">
+          <InputGroup w="100%">
+            <InputLeftElement
+              pointerEvents="none"
+              color="brand.graysilver"
+              w="50px"
+              h="50px"
+              children={<SearchIcon size={28} />}
+            />
+            <Input
+              id="search-all"
+              display="flex"
+              h="50px"
+              pl="53px"
+              pr="0"
+              fontWeight="400"
+              color="brand.graysilver"
+              lineHeight="1.2rem"
+              bg={colorMode === "light" ? "gray.100" : "fenzodark.500"}
+              borderWidth="1px"
+              borderColor={inputBorderColor}
+              borderRadius="4px"
+              aria-label="buscar"
+              autoComplete="off"
+              role="search"
+              placeholder="Buscar produto ou serviço"
+              //onClick={()=>setDisplay(!display)}
+              onFocus={onFocus}
+              value={searchTerm}
+              onChange={onChange}
+              //onChange={onTextInputChange}
+              className="search_input__field"
+              _hover={{ borderColor: inputBorderColorHover }}
+            />
+            {searchTerm && searchTerm.length >= 1 && (
+              <InputRightElement
+                w="50px"
+                h="50px"
+                color="gray.200"
+                children={
+                  <IconButton
+                    w="50px"
+                    h="50px"
+                    color={colorMode === "brand.graysilver" ? "gray.800" : "gray.600"}
+                    bg="transparent"
+                    _hover={{ bg: "none " }}
+                    _active={{ bg: "none " }}
+                    _focus={{ bg: "none " }}
+                    border="none"
+                    onClick={clearSearchInput}
+                  >
+                    <XCircle size={20} weight="fill" />
+                  </IconButton>}
+              />
+            )}
+          </InputGroup>
+        </Box>
 
-                    {(query && query.length >= 1) && (
-                        <button
-                            type="button"
-                            tabIndex={0}
-                            className="btn-icon btn-icon--gray btn-icon--size-m btn-icon--transparent search-input__erase-button"
-                            aria-hidden="false"
-                            aria-label="Limpar Campo"
-                            onClick={() => setSearchQuery("")}
-                        >
-                            <span className="icon-marmita icon-marmita--error">
-                                <svg width={48} height={48} viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                    <g transform="translate(-290 -165)" fill="#3F3E3E" fillRule="evenodd">
-                                        <g id="Group" transform="translate(290 165)">
-                                            <path d="M24 22.586l-4.95-4.95a1 1 0 1 0-1.414 1.414l4.95 4.95-4.95 4.95a1 1 0 1 0 1.414 1.414l4.95-4.95 4.95 4.95a1 1 0 1 0 1.414-1.414L25.414 24l4.95-4.95a1 1 0 1 0-1.414-1.414L24 22.586zM24 41c-9.389 0-17-7.611-17-17S14.611 7 24 7s17 7.611 17 17-7.611 17-17 17z" id="Combined-Shape" />
-                                        </g>
-                                    </g>
-                                </svg>
-                            </span>
-                        </button>
-                    )}
-                </div>
-            </form>
-
-            { showSuggestions && searchlist &&
-            <div className="search-targeted">
-                <p className="search-targeted__title">Buscas recentes</p>
-                <ul className="search-targeted__options">
-                    { searchlist && searchlist.map((item, index) => (
-                        <li className="search-targeted__option" key={index}>
-                            <button type="button" className="btn btn--link btn--size-m btn--targeted-search" variant="btn--targeted-search" theme="link" color="primary">
-                                <span className="icon-marmita icon-marmita--search">
-                                    <svg width={48} height={48} viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                        <g fill="#3F3E3E" fillRule="evenodd"><path d="M22 37c8.284 0 15-6.716 15-15 0-8.284-6.716-15-15-15-8.284 0-15 6.716-15 15 0 8.284 6.716 15 15 15zm0 3c-9.941 0-18-8.059-18-18S12.059 4 22 4s18 8.059 18 18-8.059 18-18 18z" fillRule="nonzero" /><rect transform="rotate(-45 37.793 38.293)" x="36.293" y="32.293" width={3} height={12} rx="1.5" /></g>
-                                    </svg>
-                                </span>
-                                {item}
-                            </button>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            }
-
-        </div>
-    );
+        {display && searchResults && searchResults.length > 0 && (
+          <Box
+            position="absolute"
+            w="100%"
+            maxW="410px"
+            bg={colorMode === "light" ? "white" : "gray.900"}
+            borderWidth="1px"
+            borderColor={colorMode === "light" ? "gray.200" : "gray.700"}
+            boxSizing="border-box"
+            borderRadius="4px"
+            boxShadow={colorMode === "light" ? "0px 4px 8px rgb(126 130 153 / 8%)" : "0px 4px 8px rgb(0 0 0 / 10%)"}
+            p="20px 30px"
+            className="search_results_wrapper"
+          >
+            <Text color={colorMode === "light" ? "gray.800" : "gray.200"} mb="1rem" className="search_results__title">Buscas recentes</Text>
+            <Flex
+              w="100%"
+              alignItems="flex-start"
+              direction="column"
+            >
+              <List spacing={4}>
+                {searchResults.map((item, i) => (
+                  <ListItem key={i}>
+                    <Link href="/servico/[slug]" as={`/servico/${item.slug}`}>
+                      <Button
+                        d="flex"
+                        variant="link"
+                        fontSize=".88rem"
+                        fontWeight="400"
+                        color={colorMode === "light" ? "gray.800" : "gray.200"}
+                        leftIcon={<Icon size={22} icon={item.icon_name} style={{ marginRight: "1rem" }} />}
+                        onClick={() => updateSearchInput(item.title)}
+                        key={item.title.toLowerCase()}
+                      >
+                        {item.title}
+                      </Button>
+                    </Link>
+                  </ListItem>
+                ))}
+              </List>
+            </Flex>
+          </Box>
+        )}
+      </Box>
+    </Flex>
+  );
 }
-
-NavbarSearch.propTypes = {
-    suggestions: PropTypes.instanceOf(Array)
-};
-
-NavbarSearch.defaultProps = {
-    suggestions: []
-};
 
 export default NavbarSearch;
-
-export class SearchInput extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            query: "",
-        };
-    }
-
-    handleQueryChange = query =>
-        this.setState(state => ({ ...state, query: query || "" }));
-
-    handleSearchCancel = () => this.handleQueryChange("");
-    handleSearchClear = () => this.handleQueryChange(""); // maybe differentiate between cancel and clear
-
-    render() {
-        return (
-            <>
-                <div className="search-input">
-                    <form className="search-input__form">
-                        <div className="search-input__field-wrapper">
-                            <span className="icon-marmita icon-marmita--search search-input__icon-search">
-                                <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                    <g fill="#3F3E3E" fillRule="evenodd">
-                                        <path
-                                            d="M22 37c8.284 0 15-6.716 15-15 0-8.284-6.716-15-15-15-8.284 0-15 6.716-15 15 0 8.284 6.716 15 15 15zm0 3c-9.941 0-18-8.059-18-18S12.059 4 22 4s18 8.059 18 18-8.059 18-18 18z"
-                                            fillRule="nonzero" />
-                                        <rect transform="rotate(-45 37.793 38.293)" x="36.293" y="32.293" width="3" height="12" rx="1.5" />
-                                    </g>
-                                </svg>
-                            </span>
-                            <input
-                                tabIndex="0"
-                                role="search"
-                                type="text"
-                                name="q"
-                                autoComplete="off"
-                                aria-label="Buscar prato ou ingrediente"
-                                className="search-input__field"
-                                placeholder="Busque por item ou loja"
-                                onChange={this.handleQueryChange}
-                                onClear={this.handleSearchClear}
-                                value={this.state.query}
-                            />
-
-                            {(this.state.query && this.state.query.length > 3) && (
-                                <button type="button" tabIndex={0} className="btn-icon btn-icon--gray btn-icon--size-m btn-icon--transparent search-input__erase-button" aria-hidden="false" aria-label="Limpar Campo">
-                                    <span className="icon-marmita icon-marmita--error">
-                                        <svg width={48} height={48} viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                            <g transform="translate(-290 -165)" fill="#3F3E3E" fillRule="evenodd">
-                                                <g id="Group" transform="translate(290 165)">
-                                                    <path d="M24 22.586l-4.95-4.95a1 1 0 1 0-1.414 1.414l4.95 4.95-4.95 4.95a1 1 0 1 0 1.414 1.414l4.95-4.95 4.95 4.95a1 1 0 1 0 1.414-1.414L25.414 24l4.95-4.95a1 1 0 1 0-1.414-1.414L24 22.586zM24 41c-9.389 0-17-7.611-17-17S14.611 7 24 7s17 7.611 17 17-7.611 17-17 17z" id="Combined-Shape" />
-                                                </g>
-                                            </g>
-                                        </svg>
-                                    </span>
-                                </button>
-                            )}
-                        </div>
-                    </form>
-                </div>
-            </>
-        );
-    }
-}
