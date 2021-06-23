@@ -75,6 +75,14 @@ export const WaveShapeLarge = () => {
   )
 }
 
+export const BubbleBlur = () => {
+  return (
+    <svg viewBox="0 0 723 569" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M703.969 241.602l-.006-.003C716.081 262.97 723 287.677 723 314c0 68.917-47.425 126.757-111.42 142.665L246.7 556.937C226.465 564.729 204.481 569 181.5 569 81.26 569 0 487.74 0 387.5c0-34.256 9.49-66.296 25.985-93.633l-.016.008L141.512 77.548C162.753 33.305 207.123 2.273 258.951.12l.008-.12h251.04l.003.01c41.848.557 78.081 24.378 96.356 59.12l.001-.005 97.61 182.477z" fill="currentColor"></path>
+    </svg>
+  )
+}
+
 interface SectionProps extends BoxProps {
   type: string
 }
@@ -125,6 +133,10 @@ const SectionShape = forwardRef<SectionProps, "div">((props, ref) => {
     case 'wave-large':
       cssClass = 'svg-shape-waves-large'
       shape = <WaveShapeLarge />
+      break
+    case 'bubble-blur':
+      cssClass = 'shape-bubble-blur'
+      shape = <BubbleBlur />
       break
     default:
       shape = <CurvedShape />
@@ -289,6 +301,32 @@ const SectionShape = forwardRef<SectionProps, "div">((props, ref) => {
           width: 100%;
           height: auto !important;
           padding-top: 2rem;
+        }
+
+        .shape-bubble-blur {
+          top: 0;
+          right: 0;
+          left: 0
+        }
+
+        @media (min-width: 768px) {
+            .shape-bubble-blur {
+                bottom:0;
+                left: 50%;
+                right: auto
+            }
+        }
+
+        .shape-bubble-blur>* {
+            width: 100%;
+            height: auto
+        }
+
+        @media (min-width: 768px) {
+            .shape-bubble-blur>* {
+                width:auto;
+                height: 100%
+            }
         }
       `}
       </style>

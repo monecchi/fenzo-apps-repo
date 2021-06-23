@@ -9,12 +9,13 @@ const Content = ({data: {primary}}) => {
       justify="center"
       align="center"
       maxW="1366px"
+      m="0 auto"
       mt={4}
       sx={{variant: 'styles'}}
     >
       <Box
         w="100%"
-        maxW="1366px"
+        maxW="1140px"
         m="0 auto"
       >
         <RichText render={primary.content} htmlSerializer={htmlSerializer} key={primary.uid} />

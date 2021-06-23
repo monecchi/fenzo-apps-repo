@@ -22,6 +22,11 @@ export const linkResolver = (doc) => {
       return `/tag/${doc.uid}`
     }
 
+    // URL for a service type
+    if (doc.type === 'service') {
+      return `/servico/${doc.uid}`
+    }
+
     // URL for a article type
     if (doc.type === 'article') {
       return `/article/${doc.uid}`
@@ -46,6 +51,11 @@ export const hrefResolver = (doc) => {
   // URL for a tag type
   if (doc.type === 'tag') {
     return '/tag/[uid]'
+  }
+
+  // URL for a service type
+  if (doc.type === 'service') {
+    return '/servico/[uid]'
   }
 
   // URL for a article type

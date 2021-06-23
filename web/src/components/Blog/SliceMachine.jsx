@@ -6,6 +6,7 @@ import {
   Embed,
   Gallery,
   Banner,
+  SectionTabsVertical,
   MetaInfo,
   Alert,
 } from '../Slices'
@@ -30,6 +31,8 @@ const SliceMachine = ({ slices }) => {
         } else {
           return <Gallery key={index} data={slice} />
         }
+      case 'section_vertical_tabs':
+      return <SectionTabsVertical key={index} data={slice} />
       case 'meta_information':
         return <MetaInfo key={index} meta={slice.primary} />
       case 'alert':

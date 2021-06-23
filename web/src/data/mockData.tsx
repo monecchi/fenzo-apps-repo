@@ -5,7 +5,7 @@
 export const projects = [
   {
     id: 1,
-    slug: 'portoes-de-aluminio',
+    slug: 'portao-de-aluminio',
     title: 'Portões em alumínio',
     subtitle: 'Elegância e durabilidade',
     slider_upperTitle: 'Portões em alumínio',

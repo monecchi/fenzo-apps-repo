@@ -8,6 +8,9 @@ import Loader from './Loader'
 const Layout = dynamic(() => import('./Layout'), {
   loading: Loader,
 })
+const ServiceLayout = dynamic(() => import('../Service/Layout'), {
+  loading: Loader,
+})
 const ListCard = dynamic(() => import('./ListCard'), {
   loading: Loader,
 })
@@ -41,6 +44,7 @@ const SliceMachine = dynamic(() => import('./SliceMachine'), {
 
 export {
   Layout,
+  ServiceLayout,
   ListCard,
   //Listing,
   SliceMachine,
