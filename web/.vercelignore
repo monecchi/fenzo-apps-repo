@@ -1,6 +1,5 @@
 .codeclimate.json
 .env
-.env.example
 .eslintrc.js
 .gitignore
 .prettierrc
